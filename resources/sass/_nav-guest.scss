@@ -1,0 +1,65 @@
+
+.brand-nav {
+    width: 145px;
+}
+.navbar{
+    box-shadow: 0px 7px 21px rgba(77, 34, 197, 0.05)
+}
+.logo-nav {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-nav {
+    color: black;
+    width: 21.8px;
+    height: 20px;
+}
+
+.form-custom {
+    outline: none;
+    border: 0px;
+    display: flex;
+    color: #000000;
+    background: #F8F8F8;
+    flex: 1;
+}
+
+.icon-search {
+    color: $color-primary;
+}
+
+.form-search-custom {
+    width: 370px;
+    height: 32px;
+    padding: 4px;
+    border: 0px;
+    align-items: center;
+    outline: none;
+    background: #F8F8F8;
+    border-radius: 5px;
+}
+
+
+.btn-primary-nav {
+    width: 133px;
+    padding: 31px;
+    background: $color-primary;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 600;
+    font-family: Open Sans;
+    font-size: 14px;
+    color: white;
+}
+
+.nav-login {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    text-decoration-line: underline;
+    color: $color-primary;
+}

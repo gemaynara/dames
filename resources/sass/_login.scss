@@ -1,0 +1,72 @@
+.content-login {
+    height: calc(100vh - 38.9vh);
+    background: url("./assets/images/celular.png") no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+
+.content-body {
+    background: white;
+    height: 400px;
+}
+
+.body-login {
+    width: 100%;
+}
+
+.img-center-celular {
+    position: absolute;
+    left: 557px;
+    top: 210px;
+    z-index: -9999;
+    width: 432px;
+    height: 431px;
+}
+
+
+.card-login {
+    width: 496px;
+    height: 463px;
+    box-shadow: 0px 0px 32px 0px #c3c3c3;
+    background: #FFFFFF;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.form-input-login {
+    padding: 18px 10px;
+    border: 0px solid;
+    /* Light-Gray */
+    outline: none;
+    background: #E3E5E8;
+    border-radius: 10px;
+}
+
+
+.btn-login {
+    width: 100%;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+    border: 0px;
+
+    background: $color-primary;
+    border-radius: 5px;
+}
+
+.form-login {
+    margin-top: 26px;
+}
+
+.check-login {
+    margin: 15px 0px;
+}
+
+@media (max-width: 1400px) {
+    .content-login {
+        height: 83vh;
+    }
+
+}
