@@ -15,7 +15,7 @@ class CreateCuponsTable extends Migration
     {
         Schema::create('cupons', function (Blueprint $table) {
             $table->id();
-            $table->string('nome_cupom', 10);
+            $table->string('nome_cupom', 15);
             $table->decimal('valor_desconto', 11,2)->default(0.00);
             $table->integer('porcentagem_desconto')->default(0);
             $table->integer('numero_utilizacoes')->default(0);
