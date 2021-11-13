@@ -35,10 +35,17 @@ Route::get('/homebeleza', function () {
     return view('jornada_beleza/home-beleza');
 })->name('homebeleza');
 
+Route::get('/detail', function () {
+    return view('jornada_beleza/detail');
+})->name('detail');
 
 
-
-
+Route::get('/carrinho', function () {
+    return view('jornada_beleza.car');
+})->name('carrinho');
+Route::get('/pagamento', function () {
+    return view('jornada_beleza.pay');
+})->name('pagamento');
 
 
 

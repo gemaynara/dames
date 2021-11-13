@@ -1,0 +1,199 @@
+.header-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h4 {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 45px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.9px;
+        color: #272727;
+    }
+
+    a {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+        letter-spacing: -0.9px;
+        text-decoration-line: underline;
+        color: #000000;
+    }
+}
+
+
+.min-height-card {
+    min-height: 67vh;
+}
+
+.remove-action {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 26px;
+    letter-spacing: -0.9px;
+    text-decoration-line: underline;
+    color: #ED4242;
+}
+
+.btn-comprar-rapido {
+    display: flex;
+    padding: 8px 44px;
+    width: 186px;
+    height: 44px;
+    color: white;
+    border: 0px;
+    align-items: center;
+    justify-content: center;
+    background: #4D22C5;
+    border-radius: 4px;
+}
+
+
+.right-pay {
+    margin-left: 68px;
+}
+
+
+.btn-prosseguir {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    padding: 8px 44px;
+
+    width: 191px;
+    height: 44px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20.6452px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    background: #4D22C5;
+    border-radius: 4px;
+}
+
+.btn-prosseguir:hover {
+    color: white;
+}
+
+.voltar {
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    /* identical to box height, or 142% */
+
+    letter-spacing: -0.9px;
+    text-decoration-line: underline;
+
+    color: #000000;
+
+}
+
+.left-pay {
+    background: #F2F2F2;
+}
+
+.header-products, .cupom, .price {
+    border-bottom: 1px solid;
+}
+
+.card-product-pay {
+    img {
+        width: 174px;
+        height: 156px;
+        margin-right: 30px;
+        border-radius: 9px;
+    }
+
+    .detalhe-product-pay {
+        h3 {
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.9px;
+            color: #272727;
+        }
+
+        h4 {
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 31px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.9px;
+            color: #000000;
+        }
+    }
+}
+
+
+.btn-add-cupom {
+    padding: 10px;
+    background: #4D22C5;
+    border-radius: 4px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 15px;
+    /* identical to box height */
+    border: 0px solid;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
