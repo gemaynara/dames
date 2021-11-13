@@ -22,13 +22,73 @@
 
 .btn-nav {
     transition: 500ms ease-in-out;;
+
+    p {
+        margin: 0 !important;
+    }
+
     &:hover {
         transform: translateY(-5px);
         box-shadow: 0px 0px 2px 0px #b1b1b1;
         border-radius: 0px;
         transition: 500ms ease-in-out;
     }
-    p{
-        color: #343434;
+}
+
+.active-category {
+    width: 144px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4D22C5;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.018em;
+
+    p {
+        color: white;
+        margin: 0 !important;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        letter-spacing: 0.018em;
+    }
+}
+
+.products-category {
+    width: 144px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #AEAEAE;
+    padding: 10px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.018em;
+
+    p {
+        color: #AEAEAE;
+        margin: 0 !important;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        letter-spacing: 0.018em;
     }
 }

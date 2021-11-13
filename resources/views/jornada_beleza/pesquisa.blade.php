@@ -7,21 +7,13 @@
 
             @include('components.nav-produto')
 
-            <div class="products flex-1 mx-2 col">
-                <div class="header d-flex justify-content-between ">
-                    <p class="m-0">1999 produtos encontrados</p>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <p class="mt-2 mr-2">Ordenar por:</p>
-                        <form action="">
-                            <select name="" class="form-control" id="">
-                                <option value="">Relevante</option>
-                                <option value="">Maior preço</option>
-                                <option value="">Menor preço</option>
-                                <option value="">Novidades</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
+            <div class="products flex-1  col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-none">
+                        <li class="breadcrumb-item font-weight-bold "><a href="#">Home</a></li>
+                        <li class="breadcrumb-item font-weight-bold "><a href="#">Produtos</a></li>
+                    </ol>
+                </nav>
                 <div class="body-product mt-3">
                     <section class="mt-3 d-flex flex-wrap">
 
