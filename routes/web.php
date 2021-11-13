@@ -19,8 +19,27 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/pre-registro', function () {
+    return view('auth.pre-register');
+})->name('pre-login');
 
-Auth::routes();
+Route::get('/marcas', function () {
+    return view('Iniciodejornada/marcas');
+})->name('marcas');
+
+
+
+
+
+Route::get('/homebeleza', function () {
+    return view('jornada_beleza/home-beleza');
+})->name('homebeleza');
+
+
+
+
+
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');

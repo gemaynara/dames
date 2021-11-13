@@ -1,77 +1,114 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <div class="fundo">
+        <div class="container">
+            <div class="title-register text-center py-4">
+                <h1>Preencha os dados de sua conta.</h1>
+            </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+            <div class="data-conta py-5 ">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                <form action="" method="post" class="form-custom-register">
+                    @csrf
+                    <div class="header-data-conta">
+                        <h4 class="p-0 m-0 title-dado">Dados da conta</h4>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Nome">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Sobrenome">
                         </div>
+                    </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Senha">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12"
+                                   placeholder="Confirmação de senha">
                         </div>
+                    </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Email">
                         </div>
-                    </form>
-                </div>
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12"
+                                   placeholder="Confirmação de email">
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Telefone">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Celular">
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="CPF">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="CNPJ">
+                        </div>
+                    </div>
+
+                    <div class="header-data-conta">
+                        <h4 class="p-0 m-0 title-endereco">Endereço residencial</h4>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="CEP">
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Endereço">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Complemento">
+                        </div>
+                    </div>
+
+                    <div class="header-data-conta">
+                        <h4 class="p-0 m-0 title-endereco-comercial">Endereço comercial</h4>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="CEP">
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Endereço">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control-register col-lg-12" placeholder="Complemento">
+                        </div>
+                    </div>
+
+                    <div class="header-data-conta">
+                        <h4 class="p-0 m-0 title-CNAE">Validação de CNAE</h4>
+                    </div>
+
+                    <label for="file"
+                           class="form-control-register col-lg-4 d-flex align-items-center justify-content-between my-3">
+                        Anexar documento <i class="fas fa-plus"></i>
+                    </label>
+
+                    <input type="file" id="file" name="cnae" class="d-none">
+
+                </form>
+
             </div>
         </div>
     </div>
-</div>
 @endsection

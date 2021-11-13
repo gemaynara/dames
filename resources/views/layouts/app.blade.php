@@ -29,7 +29,7 @@
 
     @include('layouts.nav.nav')
 
-    <main class="py-4" style="background: white">
+    <main class="" style="background: white">
         @yield('content')
     </main>
 

@@ -10,7 +10,7 @@
                 </div>
                 <div class="right">
                     <div class="card-login">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column justify-content-center" style="height: 100%;">
                             <h1>Seja bem vindo</h1>
                             <form action="">
                                 <div class="d-flex flex-column form-login">
@@ -23,7 +23,7 @@
                                         <input class="m-o p-0" type="checkbox">
                                         Lembrar de mim
                                     </label>
-                                    <a href="">Esqueci minha senha</a>
+                                    <a href="{{ route('password.request') }}">Esqueci minha senha</a>
                                 </div>
 
                                 <button class="btn-login">Entrar em minha conta</button>

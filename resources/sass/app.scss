@@ -7,6 +7,20 @@
 @import 'footer';
 @import 'login';
 @import 'home';
+@import 'register';
+@import 'marca';
+@import 'homeBeleza';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+a:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+    color: black;
+}

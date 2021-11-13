@@ -53,145 +53,24 @@
     </div>
 
 
-    <section class="my-3">
-        <div class="container">
-            <div class="header-best-marcas d-flex">
-                <h4 class="font-weight-bold mr-2">As melhores marcas</h4>
-                <a href="" class="p-0 m-0">Visualizar todas</a>
-            </div>
+{{--    <section class="my-3">--}}
+{{--        <div class="container">--}}
+{{--            <div class="header-best-marcas d-flex">--}}
+{{--                <h4 class="font-weight-bold mr-2">As melhores marcas</h4>--}}
+{{--                <a href="" class="p-0 m-0">Visualizar todas</a>--}}
+{{--            </div>--}}
 
-            <div class="slider"></div>
+{{--            <div class="slider"></div>--}}
 
-        </div>
-    </section>
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <section class="my-3">
-        <div class="container">
-            <div class="header-best-marcas d-flex">
-                <h4 class="font-weight-bold mr-2">Produtos mais vendidos</h4>
-                <a href="" class="p-0 m-0">Visualizar todas</a>
-            </div>
-
-            <div class="d-flex flex-wrap my-3">
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-                <div class="card-produto">
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
-                    </div>
-                    <div class="footer-card-produto">
-                        <h4 class="name-product">Hi Bio-Fiber 2</h4>
-                        <h5 class="marca-product">Hi hair care</h5>
-                        <h4 class="preco-produto p-0 mb-0 mt-3">R$ 120,00</h4>
-                        <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+    @include('components.products')
 
     <section class="banner-landerpage">
         <div class="container">
             <div class="content-banner-landerpage align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-6 content-banner-landerpage-text">
                     <h1 class="text-light mb-5">Tenha as melhores marcas com o melhor preço!</h1>
                     <div class="d-flex align-items-center">
                         <a href="" class="btn-outline mr-4">Quero me cadastrar</a>
@@ -205,60 +84,7 @@
 
 
 
-
-    <section class="my-3">
-        <div class="container">
-            <div class="header-best-marcas d-flex ml-3">
-                <h4 class="font-weight-bold mr-2">Categorias</h4>
-                <a href="" class="p-0 m-0">Visualizar todos produtos</a>
-            </div>
-
-            <div class="d-flex flex-wrap my-3">
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-                <div class="card-categoria-home">
-                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                    <a class="text-category" >Exemplo</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('components.category')
 
 
 

@@ -1,0 +1,112 @@
+.fundo {
+
+    background: url("./assets/images/component-fundo.png") no-repeat;
+    background-position: right;
+    background-size: 34%;
+    background-position-y: 100%;
+}
+
+.title-dado {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+}
+
+.title-dado:after {
+    background-color: #00000040;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 82%;
+    margin-left: 11px;
+}
+
+.title-endereco:after {
+    background-color: #00000040;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 77%;
+    margin-left: 11px;
+}
+
+.title-endereco {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+}
+
+.title-endereco-comercial:after {
+    background-color: #00000040;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 78%;
+    margin-left: 11px;
+}
+
+.title-endereco-comercial {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+}
+
+.title-CNAE:after {
+    background-color: #00000040;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 79%;
+    margin-left: 11px;
+}
+
+.title-CNAE {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+}
+
+.form-control-register {
+    height: 45px;
+
+    border: 1px solid #4D22C5;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.form-custom-register {
+    width: 80%;
+    margin: 0 auto;
+}

@@ -1,23 +1,91 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+    <header class="content-banner">
+        <div class="container">
+            <div class="banner d-flex justify-content-between">
+                <div class="left d-flex flex-column">
+                    <h1>O lugar perfeito para seu salão beleza!</h1>
+                    <div class="options d-flex">
+                        <a class="nav-link btn-primary-banner text-light" href="#">Efetuar cadastro</a>
+                        <a class="nav-link nav-login" href="{{route('login')}}">Já tenho conta</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="{{asset('assets/images/celular.png')}}" alt="">
                 </div>
             </div>
         </div>
+    </header>
+    <div class="container passos">
+        <options class="d-flex justify-content-around">
+            <div class="card-passos d-flex align-items-center">
+                <div class="icon-card">
+                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">
+                </div>
+                <div class="content-card-passos">
+                    <h4>Compras rapidas </h4>
+                    <p>Entregamos em até 24hrs após a confirmação da compra</p>
+                </div>
+            </div>
+
+            <div class="card-passos d-flex align-items-center">
+                <div class="icon-card">
+                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">
+                </div>
+                <div class="content-card-passos mt-3">
+                    <h4>Compras rapidas </h4>
+                    <p>Entregamos em até 24hrs após a confirmação da compra</p>
+                </div>
+            </div>
+
+            <div class="card-passos d-flex align-items-center">
+                <div class="icon-card">
+                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">
+                </div>
+                <div class="content-card-passos">
+                    <h4>Compras rapidas </h4>
+                    <p>Entregamos em até 24hrs após a confirmação da compra</p>
+                </div>
+            </div>
+
+        </options>
     </div>
-</div>
+
+
+    {{--    <section class="my-3">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="header-best-marcas d-flex">--}}
+    {{--                <h4 class="font-weight-bold mr-2">As melhores marcas</h4>--}}
+    {{--                <a href="" class="p-0 m-0">Visualizar todas</a>--}}
+    {{--            </div>--}}
+
+    {{--            <div class="slider"></div>--}}
+
+    {{--        </div>--}}
+    {{--    </section>--}}
+
+    @include('components.products')
+
+    <section class="banner-landerpage">
+        <div class="container">
+            <div class="content-banner-landerpage align-items-center">
+                <div class="col-md-6 content-banner-landerpage-text">
+                    <h1 class="text-light mb-5">Tenha as melhores marcas com o melhor preço!</h1>
+                    <div class="d-flex align-items-center">
+                        <a href="" class="btn-outline mr-4">Quero me cadastrar</a>
+                        <a href="" class="text-light">Já tenho minha conta</a>
+                    </div>
+                </div>
+                <img src="{{asset('assets/images/banner-aux.png')}}" class="foto-banner" alt="">
+            </div>
+        </div>
+    </section>
+
+
+
+    @include('components.category')
+
+
+
 @endsection

@@ -17,7 +17,7 @@
                 <div class="d-flex">
                     <ul class="navbar-nav mr-4 d-flex align-items-center ">
                         <li class="nav-item mr-3">
-                            <a class="nav-link btn-primary-nav text-light" href="#">Cadastrar-me</a>
+                            <a class="nav-link btn-primary-nav text-light" href="{{route('pre-login')}}">Cadastrar-me</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-login" href="{{route('login')}}">Login</a>
