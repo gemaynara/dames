@@ -43,9 +43,14 @@ Route::get('/detail', function () {
 Route::get('/carrinho', function () {
     return view('jornada_beleza.car');
 })->name('carrinho');
+
 Route::get('/pagamento', function () {
     return view('jornada_beleza.pay');
 })->name('pagamento');
+
+Route::get('/pesquisa', function () {
+    return view('jornada_beleza.pesquisa');
+})->name('pesquisa');
 
 
 
