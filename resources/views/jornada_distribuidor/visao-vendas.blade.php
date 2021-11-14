@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <header class="header-graficos">
+    <header class="header-graficos bg-dark">
         <div class="container">
             <div class="cards-grafico d-flex flex-column">
                 <h1 class="my-4 text-light">Visão geral de vendas</h1>
@@ -30,21 +30,17 @@
 
 
                         <div class="status-pagamento mt-3 ">
-                            <p class="text-light text-left mb-0">Status de pagamento: </p>
-                            <div class="d-flex">
-                                <div class="card-status-pag">
-                                    <div class="header-status" style="background:#56C2FF "></div>
+                            <div class="grafico-meta-vendas d-flex justify-content-between">
+                                <div class="detail-graficos col">
+                                    <div class="header-detail-vendas text-left pt-3">
+                                        <h2 class="mb-1">Antecipação de valores:</h2>
+                                        <div class="d-flex mt-2 justify-content-between align-items-centerce">
+                                            <h2>R$2.500,00</h2>
+                                            <a href="">Antecipar valor</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    <h3>32</h3>
-                                    <p>Em andamento</p>
-                                    <a href="">visualizar detalhes</a>
-                                </div>
-                                <div class="card-status-pag">
-                                    <div class="header-status" style="background:#FF9217 "></div>
-                                    <h3>52</h3>
-                                    <p>Vencido</p>
-                                    <a href="">visualizar detalhes</a>
-                                </div>
                             </div>
                         </div>
                     </div>
