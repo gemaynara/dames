@@ -52,6 +52,46 @@ Route::get('/pesquisa', function () {
     return view('jornada_beleza.pesquisa');
 })->name('pesquisa');
 
+Route::get('/categories', function () {
+    return view('jornada_beleza.categories');
+})->name('categories');
+
+
+
+
+//jornada distriuidor
+
+
+
+
+Route::get('/jornada_distribuidor/homebeleza', function () {
+    return view('jornada_distribuidor/home-distribuidora');
+})->name('homebeleza');
+
+Route::get('/jornada_distribuidor/detail', function () {
+    return view('jornada_distribuidor/detail');
+})->name('detail');
+
+
+Route::get('/jornada_distribuidor/vendas', function () {
+    return view('jornada_distribuidor.visao-vendas');
+})->name('vendas');
+
+Route::get('/jornada_distribuidor/pesquisa', function () {
+    return view('jornada_distribuidor.pesquisa');
+})->name('pesquisa');
+
+Route::get('/jornada_distribuidor/categories', function () {
+    return view('jornada_distribuidor.categories');
+})->name('categories');
+
+
+
+
+
+
+
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');
