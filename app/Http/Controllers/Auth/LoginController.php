@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -36,5 +39,39 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        $this->validateLogin($request);
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'ativo' => 1])) {
+            return redirect()->intended('home');
+        }
+
+        return back()
+            ->withErrors(['email' => trans('auth.failed')])
+            ->withInput(request(['email']));
+
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required|string'
+        ]);
+
+    }
+
+
+    public function logout(Request $request)
+    {
+        Session::flush();
+        Auth::logout();
     }
 }

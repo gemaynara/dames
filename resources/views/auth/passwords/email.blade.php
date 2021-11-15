@@ -12,12 +12,17 @@
                                 <p>Fique tranquilo, iremos te ajudar na recuperação de sua senha em poucos instantes.
                                     Insira
                                     o seu email de cadastro e enviaremos uma código de recuperação.</p>
-                                <form action="{{route('password.email')}}">
+                                @include('layouts.flash-message')
+                                <form action="{{route('forgot-password')}}" method="POST">
+                                    @csrf
                                     <div class="d-flex flex-column form-login">
                                         <input type="email" class="form-input-recuperar-senha my-2" placeholder="Email"
-                                               name="email">
+                                               id="email_address" name="email" required autofocus>
+                                        @if ($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                        @endif
                                     </div>
-                                    <button class="btn-login">Recuperar minha senha</button>
+                                    <button class="btn-login" type="submit">Recuperar minha senha</button>
                                 </form>
                             </div>
                         </div>

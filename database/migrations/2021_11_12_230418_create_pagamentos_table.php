@@ -26,7 +26,6 @@ class CreatePagamentosTable extends Migration
             $table->string('codigo_transacao',50)->nullable();
             $table->string('hash',200)->nullable();
             $table->decimal('valor', 11,2)->default(0.00);
-            $table->string('hash',200)->nullable();
             $table->string('bandeira_cartao',10)->nullable();
             $table->integer('parcelas')->nullable();
             $table->timestamps();

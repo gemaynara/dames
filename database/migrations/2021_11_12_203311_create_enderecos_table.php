@@ -24,7 +24,7 @@ class CreateEnderecosTable extends Migration
             $table->string('bairro', 100);
             $table->string('cidade', 100);
             $table->char('estado', 2);
-            $table->char('tipo_endereco', 1); // Comercial - Residencial - Entrega - Cobranca
+            $table->string('tipo_endereco', 15); // Comercial - Residencial - Entrega - Cobranca
             $table->tinyInteger('padrao')->default(0);
             $table->tinyInteger('ativo')->default(1);
             $table->timestamps();

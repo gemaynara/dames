@@ -21,8 +21,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
-        return view('home');
+        if (auth()->user()->perfil == "S"){
+            return view('jornada-beleza.home-beleza');
+        }elseif (auth()->user()->perfil == "D"){
+            return view('jornada-distribuidor.home-distribuidora');
+        }
+
     }
+
+
 }

@@ -6,30 +6,36 @@
             <div class="d-flex align-items-center justify-content-between">
                 <div class="left-login col-md-6 col-lg-4">
                     <h1>O lugar perfeito para seu salão beleza!</h1>
-                    <p>Não tem cadastro ainda?<a href=""> Clique aqui e cadastre-se</a></p>
+                    <p>Não tem cadastro ainda?<a href="{{route('pre-register')}}"> Clique aqui e cadastre-se</a></p>
                 </div>
                 <div class="right">
-                    <div class="card-login">
-                        <div class="card-body d-flex flex-column justify-content-center" style="height: 100%;">
-                            <h1>Seja bem vindo</h1>
-                            <form action="">
-                                <div class="d-flex flex-column form-login">
-                                    <input type="email" class="form-input-login my-2">
-                                    <input type="password" class="form-input-login my-2">
-                                </div>
+                        <div class="card-login">
+                            <div class="card-body d-flex flex-column justify-content-center" style="height: 100%;">
+                                @include('layouts.flash-message')
+                                <h1>Seja bem vindo</h1>
+                                <form action="{{route('login')}}" method="POST">
+                                    @csrf
+                                    <div class="d-flex flex-column form-login">
+                                        <input type="email" class="form-input-login my-2" placeholder="E-mail" name="email" value="{{old('email')}}" required>
+                                        <input type="password" class="form-input-login my-2" placeholder="Senha" name="password" id="password" required>
+                                        @if ($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                        @endif
+                                    </div>
 
-                                <div class="d-flex check-login justify-content-between">
-                                    <label class="m-o p-0">
-                                        <input class="m-o p-0" type="checkbox">
-                                        Lembrar de mim
-                                    </label>
-                                    <a href="{{ route('password.request') }}">Esqueci minha senha</a>
-                                </div>
+                                    <div class="d-flex check-login justify-content-between">
+                                        <label class="m-o p-0">
+                                            <input class="m-o p-0" type="checkbox">
+                                            Lembrar de mim
+                                        </label>
+                                        <a href="{{ route('forgot-password') }}">Esqueci minha senha</a>
+                                    </div>
 
-                                <button class="btn-login">Entrar em minha conta</button>
-                            </form>
+                                    <button class="btn-login" type="submit">Entrar em minha conta</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+
                 </div>
             </div>
 

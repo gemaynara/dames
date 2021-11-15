@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Dames') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -26,15 +26,23 @@
 </head>
 <body>
 <div id="app">
-
-    @include('layouts.nav.nav')
-
+    @if(auth()->guest())
+        @include('layouts.nav.nav')
+    @elseif(auth()->user()->perfil == "D")
+        @include('layouts.nav.nav-distribuidor')
+    @elseif(auth()->user()->perfil == "S")
+        @include('layouts.nav.nav-salao')
+    @endif
     <main class="" style="background: white">
+
         @yield('content')
     </main>
 
     @include('layouts.footer')
 </div>
 <script src="https://kit.fontawesome.com/ae8025ab5d.js" crossorigin="anonymous"></script>
+<script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('js/jquery.mask.min.js')}}"></script>
+<script src="{{asset('js/validate.js')}}"></script>
 </body>
 </html>

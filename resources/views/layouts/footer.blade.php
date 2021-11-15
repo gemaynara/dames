@@ -4,11 +4,11 @@
             <img src="{{asset('assets/images/icon-footer.svg')}}" alt="">
         </div>
         <ul class="d-flex justify-content-center list-footer">
-            <li><a href="">Home</a></li>
+            <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="">Politicas de privacidade</a></li>
             <li><a href="">Termos de uso</a></li>
-            <li><a href="">Cadastre-se</a></li>
-            <li><a href="">Login</a></li>
+            <li><a href="{{route('pre-register')}}">Cadastre-se</a></li>
+            <li><a href="{{route('login')}}">Login</a></li>
             <li><a href="">Marcas</a></li>
             <li><a href="">Categorias</a></li>
             <li><a href="">Lojas</a></li>
@@ -23,7 +23,7 @@
 
         </ul>
         <div class="Copyright d-flex align-items-center justify-content-center my-2">
-            <p class="p-0 m-0 text-light">Dames  -   © 2021 All Rights Reserved    |    Feito com  ♥ pela MKTI</p>
+            <p class="p-0 m-0 text-light">Dames  -   © {{date('Y')}} All Rights Reserved    |    Feito com  ♥ pela MKTI</p>
         </div>
     </div>
 </footer>

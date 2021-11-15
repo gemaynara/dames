@@ -7,7 +7,7 @@
                 <div class="left d-flex flex-column">
                     <h1>O lugar perfeito para seu salão beleza!</h1>
                     <div class="options d-flex">
-                        <a class="nav-link btn-primary-banner text-light" href="#">Efetuar cadastro</a>
+                        <a class="nav-link btn-primary-banner text-light" href="{{route('pre-register')}}">Efetuar cadastro</a>
                         <a class="nav-link nav-login" href="{{route('login')}}">Já tenho conta</a>
                     </div>
                 </div>

@@ -7,38 +7,41 @@
             <div class="container content-pre-register d-flex align-items-center">
                 <div class="body-login">
                     <div class="d-flex align-items-center justify-content-center">
-                        <div class="d-flex justify-content-around w-75">
-                            <div class="left">
-                                <a href="{{route('register')}}">
-                                    <div class="card-tipos d-flex flex-column justify-content-between"
-                                         style="height: 100%;">
-                                        <div class="header-salao">
+                            <div class="d-flex justify-content-around w-75">
+                                <div class="left">
+                                    <a href="{{route('register', ['tipo'=> "S"])}}">
+                                        <div class="card-tipos d-flex flex-column justify-content-between"
+                                             style="height: 100%;">
+                                            <div class="header-salao">
 
+                                            </div>
+                                            <div class="footer-salao">
+                                                <h2>Salão de beleza</h2>
+                                                <p>descrição exemplo, descrição exemplo,
+                                                    descrição exemplo,descrição exemplo,</p>
+                                            </div>
                                         </div>
-                                        <div class="footer-salao">
-                                            <h2>Salão de beleza</h2>
-                                            <p>descrição exemplo, descrição exemplo,
-                                                descrição exemplo,descrição exemplo,</p>
+                                    </a>
+                                </div>
+                                <div class="right">
+                                    <a href="{{route('register', ['tipo'=> "D"])}}">
+                                    <div class="">
+                                        <div class="card-tipos d-flex flex-column justify-content-between"
+                                             style="height: 100%;">
+                                            <div class="header-distribuidor">
+
+                                            </div>
+                                            <div class="footer-distribuidor">
+                                                <h2>Distribuidora</h2>
+                                                <p>descrição exemplo, descrição exemplo,
+                                                    descrição exemplo,descrição exemplo,</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="right">
-                                <div class="">
-                                    <div class="card-tipos d-flex flex-column justify-content-between"
-                                         style="height: 100%;">
-                                        <div class="header-distribuidor">
-
-                                        </div>
-                                        <div class="footer-distribuidor">
-                                            <h2>Distribuidora</h2>
-                                            <p>descrição exemplo, descrição exemplo,
-                                                descrição exemplo,descrição exemplo,</p>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
+
                     </div>
 
                 </div>
