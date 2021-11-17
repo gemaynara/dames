@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class MarcaController extends Controller
 {
+
+
     public function listaMarcas(){
         return view('inicio-jornada.marcas');
     }
