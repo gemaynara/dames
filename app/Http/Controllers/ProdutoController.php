@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Produto;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -13,8 +14,8 @@ class ProdutoController extends Controller
 
     public function getProdutosSalao()
     {
-
-        return view('jornada-beleza.produtos');
+        $produtos = Produto::getProducts();
+        return view('jornada-beleza.produtos', compact('produtos'));
     }
 
     public function index()

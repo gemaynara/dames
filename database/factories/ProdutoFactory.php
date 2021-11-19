@@ -6,7 +6,9 @@ use App\Produto;
 use Faker\Generator as Faker;
 
 $factory->define(Produto::class, function (Faker $faker) {
+    $distribuidor = $faker->randomElement(\App\User::query()->where('perfil', 'D')->get());
     return [
+        'distribuidor_id'=> $distribuidor->id,
         'categoria_id'=> rand(1,10),
         'marca_id'=> rand(1,10),
         'nome'=> $faker->text(20),
