@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class CarrinhoController extends Controller
 {
     public function verCarrinho(){
-            return view('jornada_beleza.carrinho');
+            return view('jornada-beleza.carrinho');
     }
 }

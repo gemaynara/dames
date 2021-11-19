@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group(['middleware' => ['guest']], function () {
-    Route::get('/', function (){
-        return view('welcome');
-    })->name('welcome');
+    Route::get('/', 'HomeController@welcome')->name('welcome')->middleware('guest');
 
     Route::get('/pre-registro', 'Auth\RegisterController@preRegister')->name('pre-register');
     Route::get('/registro/{tipo}', 'Auth\RegisterController@showRegistrationForm')->name('register');
@@ -44,6 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::group(['prefix'=>'salao'], function (){
+        Route::get('/produtos', 'ProdutoController@getProdutosSalao')->name('salao.produtos');
 
         Route::get('/carrinho', 'CarrinhoController@verCarrinho')->name('ver-carrinho');
 
@@ -57,12 +56,13 @@ Route::group(['middleware' => ['auth']], function () {
             return view('jornada_beleza.pay');
         })->name('pagamento');
 
-        Route::get('/pesquisa', function () {
-            return view('jornada-beleza.pesquisa');
-        })->name('pesquisa');
+
     });
 
     Route::group(['prefix'=>'distribuidor'], function (){
+
+        Route::get('/produtos', 'ProdutoController@getProdutosDistribuidor')->name('distribuidor.produtos');
+
 
         Route::get('/jornada_distribuidor/detail', function () {
             return view('jornada-distribuidor/detail');
@@ -73,9 +73,7 @@ Route::group(['middleware' => ['auth']], function () {
             return view('jornada_distribuidor.visao-vendas');
         })->name('vendas');
 
-        Route::get('/jornada_distribuidor/pesquisa', function () {
-            return view('jornada_distribuidor.pesquisa');
-        })->name('pesquisa');
+
 
         Route::get('/jornada_distribuidor/categories', function () {
             return view('jornada_distribuidor.categories');

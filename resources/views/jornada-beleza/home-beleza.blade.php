@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    @include('components.products')
+    @include('components.produtos')
 
     <section class="banner-landerpage my-5">
         <div class="container">
@@ -38,7 +38,7 @@
 
 
 
-    @include('components.category')
+    @include('components.categorias')
 
 
 

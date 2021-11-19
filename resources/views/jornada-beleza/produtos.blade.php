@@ -9,10 +9,7 @@
 
             <div class="products flex-1  col">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb bg-none">
-                        <li class="breadcrumb-item font-weight-bold "><a href="#">Home</a></li>
-                        <li class="breadcrumb-item font-weight-bold "><a href="#">Produtos</a></li>
-                    </ol>
+                    {{ Breadcrumbs::render('produtos-salao') }}
                 </nav>
                 <div class="body-product mt-3">
                     <section class="mt-3 d-flex flex-wrap">
@@ -32,7 +29,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
+
 
                     </section>
 

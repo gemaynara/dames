@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-        <a class="navbar-brand " href="{{url('home')}}"><img class="brand-nav" src="{{asset('assets/images/logo.svg')}}"
+        <a class="navbar-brand " href="{{route('home')}}"><img class="brand-nav" src="{{asset('assets/images/logo.svg')}}"
                                                              alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
                     </ul>
                     <ul class="navbar-nav mr-4 d-flex align-items-center ">
                         <li class="nav-item">
-                            <a class="nav-link nav-login" href="">Produtos</a>
+                            <a class="nav-link nav-login" href="{{route('salao.produtos')}}">Produtos</a>
                         </li>
                     </ul>
 

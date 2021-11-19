@@ -5,7 +5,7 @@
         <nav aria-label="breadcrumb p-0 m-0">
             <ol class="breadcrumb bg-none px-0 mx-0">
                 <li class="breadcrumb-item font-weight-bold "><a href="#">Home</a></li>
-                <li class="breadcrumb-item font-weight-bold "><a href="#">Categorias</a></li>
+{{--                <li class="breadcrumb-item font-weight-bold "><a href="#">Categorias</a></li>--}}
             </ol>
         </nav>
 

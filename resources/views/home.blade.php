@@ -84,7 +84,7 @@
 
 
 
-    @include('components.category')
+    @include('components.categorias')
 
 
 
