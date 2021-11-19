@@ -13,6 +13,7 @@ class ProdutoController extends Controller
 
     public function getProdutosSalao()
     {
+
         return view('jornada-beleza.produtos');
     }
 

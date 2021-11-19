@@ -19,6 +19,7 @@ class CreateProdutosTable extends Migration
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->unsignedBigInteger('marca_id');
             $table->foreign('marca_id')->references('id')->on('marcas');
+            $table->integer('distribuidor_id')->nullable();
             $table->string('nome', 50);
             $table->string('descricao', 300)->nullable();
             $table->string('detalhes', 800)->nullable();

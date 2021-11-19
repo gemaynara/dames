@@ -11,6 +11,7 @@ class Produto extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+        'distribuidor_id',
         'categoria_id',
         'marca_id',
         'nome',
@@ -23,5 +24,11 @@ class Produto extends Model
         'slug',
         'ativo',
     ];
+
+    public static function getProducts($distrubuidor= null){
+       return Produto::where('distribuidor_id', $distrubuidor)
+            ->where('ativo', 1)
+            ->get();
+    }
 
 }
