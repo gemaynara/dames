@@ -3,19 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Produto;
+use App\Services\ProdutoService;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
     public function getProdutosDistribuidor()
     {
-        return view('jornada-distribuidor.produtos');
+        $produtos = (new ProdutoService)->getProdutos(auth()->user()->id);
+        return view('jornada-distribuidor.produtos', compact($produtos));
     }
 
     public function getProdutosSalao()
     {
-        $produtos = Produto::getProducts();
+        $produtos = (new ProdutoService)->getProdutos();
         return view('jornada-beleza.produtos', compact('produtos'));
+    }
+
+    public function getMaisVendidos()
+    {
+
+        return view('components.produtos', compact('maisVendidos'));
     }
 
     public function index()

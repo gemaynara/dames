@@ -25,10 +25,8 @@ class Produto extends Model
         'ativo',
     ];
 
-    public static function getProducts($distrubuidor= null){
-       return Produto::where('distribuidor_id', $distrubuidor)
-            ->where('ativo', 1)
-            ->get();
+    public static function getProducts(){
+
     }
 
 }
