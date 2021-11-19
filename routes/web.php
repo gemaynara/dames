@@ -31,20 +31,23 @@ Route::group(['middleware' => ['guest']], function () {
 
 //Auth::routes();
 
+Route::group(['prefix'=>'jornada'], function (){
+    Route::get('/marcas', 'MarcaController@listaMarcas')->name('jornada.marcas');
+    Route::get('/categorias', 'CategoriaController@listaCategorias')->name('jornada.categorias');
+    Route::get('/carrinho', 'CarrinhoController@verCarrinho')->name('ver-carrinho');
+});
+
 Route::group(['middleware' => ['auth']], function () {
 
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('home', 'HomeController@index')->name('home');
 
-    Route::group(['prefix'=>'jornada'], function (){
-        Route::get('/marcas', 'MarcaController@listaMarcas')->name('jornada.marcas');
-        Route::get('/categorias', 'CategoriaController@listaCategorias')->name('jornada.categorias');
-    });
+
 
     Route::group(['prefix'=>'salao'], function (){
         Route::get('/produtos', 'ProdutoController@getProdutosSalao')->name('salao.produtos');
 
-        Route::get('/carrinho', 'CarrinhoController@verCarrinho')->name('ver-carrinho');
+
 
         Route::get('/detail', function () {
             return view('jornada-beleza/detail');

@@ -8,7 +8,7 @@
         <div class="d-flex flex-wrap my-3">
             @foreach($categorias as $categoria)
             <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="{{$categoria->nome}}">
+                <img src="{{asset('images/categorias/'. $categoria->imagem)}}" alt="{{$categoria->nome}}" width="100px">
                 <a class="text-category" >{{$categoria->nome}}</a>
             </div>
             @endforeach

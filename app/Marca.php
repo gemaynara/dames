@@ -9,4 +9,11 @@ class Marca extends Model
     public $timestamps = true;
     protected $table = 'marcas';
     protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'nome',
+        'descricao',
+        'imagem',
+        'ativo'
+    ];
 }

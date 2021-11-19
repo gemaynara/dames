@@ -9,7 +9,8 @@ class Endereco extends Model
     public $timestamps = true;
     protected $table = 'enderecos';
     protected $primaryKey = 'id';
-    protected $fillable=[
+
+    protected $fillable = [
         "user_id",
         "cep",
         "endereco",
@@ -20,6 +21,6 @@ class Endereco extends Model
         "estado",
         "tipo_endereco",
         "padrao",
-        "ativo",
+        "ativo"
     ];
 }

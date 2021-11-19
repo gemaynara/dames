@@ -11,8 +11,8 @@
         <div class="d-flex flex-wrap ">
             @foreach($categorias as $categoria)
                 <div class="card-categoria-home">
-                    @if(!empty($categoria->caminho_imagem))
-                        <img src="{{asset('assets/images/categorias/'. $categoria->caminho_imagem)}}" alt="{{$categoria->nome}}">
+                    @if(!empty($categoria->imagem))
+                        <img src="{{asset('images/categorias/'. $categoria->imagem)}}" alt="{{$categoria->nome}}" width="100px">
                     @else
                         <img src="{{asset('assets/images/Vector.png')}}" alt="{{$categoria->nome}}">
                     @endif

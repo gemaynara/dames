@@ -15,6 +15,7 @@ class Arquivo extends Model
         'nome_arquivo',
         'caminho',
         'tamanho',
-        'formato'
+        'formato',
+        'ativo',
     ];
 }

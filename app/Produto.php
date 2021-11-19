@@ -9,4 +9,19 @@ class Produto extends Model
     public $timestamps = true;
     protected $table = 'produtos';
     protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'categoria_id',
+        'marca_id',
+        'nome',
+        'descricao',
+        'detalhes',
+        'valor',
+        'estoque',
+        'valor_desconto',
+        'qnt_vendida',
+        'slug',
+        'ativo',
+    ];
+
 }

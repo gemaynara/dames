@@ -19,12 +19,12 @@ class CreateEnderecosTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('cep', 9);
             $table->string('endereco', 300);
-            $table->integer('numero');
+            $table->integer('numero')->nullable();
             $table->string('complemento', 200)->nullable();
             $table->string('bairro', 100);
             $table->string('cidade', 100);
             $table->char('estado', 2);
-            $table->string('tipo_endereco', 15); // Comercial - Residencial - Entrega - Cobranca
+            $table->string('tipo_endereco', 15)->nullable(); // Comercial - Residencial - Entrega - Cobranca
             $table->tinyInteger('padrao')->default(0);
             $table->tinyInteger('ativo')->default(1);
             $table->timestamps();
