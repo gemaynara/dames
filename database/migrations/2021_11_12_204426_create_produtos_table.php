@@ -26,6 +26,7 @@ class CreateProdutosTable extends Migration
             $table->integer('estoque')->default(0);
             $table->decimal('valor_desconto')->default(0.00);
             $table->integer('qnt_vendida')->default(0);
+            $table->string('slug',500)->nullable();
             $table->tinyInteger('ativo')->default(1);
             $table->timestamps();
         });

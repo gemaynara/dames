@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriasTable extends Migration
+class CreateEstadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCategoriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorias', function (Blueprint $table) {
+        Schema::create('estados', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 50);
-            $table->string('descricao', 300)->nullable();
-            $table->string('imagem', 200)->nullable();
-            $table->tinyInteger('ativo')->default(1);
+            $table->string('estado', 50);
+            $table->string('abreviacao', 5);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateCategoriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorias');
+        Schema::dropIfExists('estados');
     }
 }

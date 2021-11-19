@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Arquivo;
 use App\Endereco;
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -45,14 +47,16 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function preRegister(){
+    public function preRegister()
+    {
         return view('auth.pre-register');
     }
 
     public function showRegistrationForm(Request $request)
     {
         $tipo = $request->tipo;
-        return view('auth.register')->with("tipo", $tipo);
+        $estados = DB::table('estados')->get();
+        return view('auth.register', compact('tipo', 'estados'));
     }
 
     public function register(Request $request)
@@ -72,14 +76,21 @@ class RegisterController extends Controller
         try {
             DB::beginTransaction();
             $data = $request->all();
+
             $user = $this->createUser($data);
-            $data['user_id']= $user->id;
+            $data['user_id'] = $user->id;
             $comercial = $this->createAddress($data, 'comercial');
             $residencial = $this->createAddress($data, 'residencial');
+            if ($request->file("file")) {
+                $arquivo = Helper::uploadFile($request->file('file'));
+                $arquivo['user_id']= $user->id;
+                Arquivo::create($arquivo);
+            }
             DB::commit();
-            return redirect()->back()->with('success', 'cliente registrado com sucessp');
+            return redirect('home')->with('success', 'Cadastro realizado com sucesso!');
+//            return redirect()->back()->with('success', 'cliente registrado com sucessp');
         } catch (\Exception $e) {
-            Log::error("Erro ao criar conta: " .$e->getMessage());
+            Log::error("Erro ao criar conta: " . $e->getMessage());
             DB::rollBack();
         }
 
@@ -96,7 +107,7 @@ class RegisterController extends Controller
     public function createUser(array $data)
     {
         return User::create([
-            'name' => $data['nome']. " " . $data['sobrenome'],
+            'name' => $data['nome'] . " " . $data['sobrenome'],
             'email' => $data['email'],
             'cpf' => $data['cpf'],
             'cnpj' => $data['cnpj'],
@@ -109,7 +120,7 @@ class RegisterController extends Controller
 
     public function createAddress(array $data, $tipo)
     {
-         return Endereco::create([
+        return Endereco::create([
             'user_id' => $data['user_id'],
             'cep' => $data[$tipo]['cep'],
             'endereco' => $data[$tipo]['endereco'],
@@ -118,7 +129,7 @@ class RegisterController extends Controller
             'bairro' => $data[$tipo]['bairro'],
             'cidade' => $data[$tipo]['cidade'],
             'estado' => $data[$tipo]['estado'],
-            'tipo_endereco' =>  strtoupper($tipo),
+            'tipo_endereco' => strtoupper($tipo),
         ]);
     }
 }

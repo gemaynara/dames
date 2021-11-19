@@ -91,3 +91,15 @@ $("#cep-residencial").on('blur', function (e){
         }
     } //end if.
 })
+
+//valida tipo de registro
+if ($(".div-cnae").css('display') === "block"){
+    $("input[name=file]").attr("required", true);
+}else{
+    $("input[name=file]").attr("required", false);
+}
+
+$(".file-cnae").on('change', function (e){
+    var filename = $('input[type=file]').val().replace(/.*(\/|\\)/, '');
+    $(".name-file").html(filename)
+})

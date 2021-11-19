@@ -17,7 +17,7 @@ Route::group(['middleware' => ['guest']], function () {
         return view('welcome');
     })->name('welcome');
 
-    Route::get('/pre-register', 'Auth\RegisterController@preRegister')->name('pre-register');
+    Route::get('/pre-registro', 'Auth\RegisterController@preRegister')->name('pre-register');
     Route::get('/registro/{tipo}', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('/registrar', 'Auth\RegisterController@register')->name('postRegister');
 
@@ -35,18 +35,20 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
 
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('home', 'HomeController@index')->name('home');
 
     Route::group(['prefix'=>'jornada'], function (){
-        Route::get('/marcas', 'MarcaController@listaMarcas')->name('marcas');
+        Route::get('/marcas', 'MarcaController@listaMarcas')->name('jornada.marcas');
+        Route::get('/categorias', 'CategoriaController@listaCategorias')->name('jornada.categorias');
     });
 
     Route::group(['prefix'=>'salao'], function (){
-        Route::get('/categorias', 'CategoriaController@listaCategorias')->name('categorias');
+
         Route::get('/carrinho', 'CarrinhoController@verCarrinho')->name('ver-carrinho');
 
         Route::get('/detail', function () {
-            return view('jornada_beleza/detail');
+            return view('jornada-beleza/detail');
         })->name('detail');
 
 
@@ -56,14 +58,14 @@ Route::group(['middleware' => ['auth']], function () {
         })->name('pagamento');
 
         Route::get('/pesquisa', function () {
-            return view('jornada_beleza.pesquisa');
+            return view('jornada-beleza.pesquisa');
         })->name('pesquisa');
     });
 
     Route::group(['prefix'=>'distribuidor'], function (){
 
         Route::get('/jornada_distribuidor/detail', function () {
-            return view('jornada_distribuidor/detail');
+            return view('jornada-distribuidor/detail');
         })->name('detail');
 
 

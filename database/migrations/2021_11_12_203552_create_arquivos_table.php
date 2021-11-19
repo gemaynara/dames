@@ -18,7 +18,7 @@ class CreateArquivosTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nome_arquivo', 300);
-            $table->string('diretorio', 400);
+            $table->string('caminho', 600);
             $table->string('formato', 20);
             $table->integer('tamanho');
             $table->tinyInteger('ativo')->default(1);

@@ -12,50 +12,16 @@
 
         <h2 class="mb-3">Categorias</h2>
 
-        <div class="d-flex flex-wrap ">
+        @foreach($categorias as $categoria)
             <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
+                @if(!empty($categoria->caminho_imagem))
+                    <img src="{{asset('assets/images/categorias/'. $categoria->caminho_imagem)}}" alt="">
+                @else
+                    <img src="{{asset('assets/images/Vector.png')}}" alt="">
+                @endif
+                <a class="text-category">{{$categoria->nome}}</a>
             </div>
-
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-            <div class="card-categoria-home">
-                <img src="{{asset('assets/images/Vector.png')}}" alt="">
-                <a class="text-category">Exemplo</a>
-            </div>
-        </div>
+        @endforeach>
 
 
     </div>

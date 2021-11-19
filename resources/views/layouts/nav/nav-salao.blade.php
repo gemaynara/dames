@@ -18,18 +18,31 @@
                 <div class="d-flex">
                         <ul class="navbar-nav mr-4 d-flex align-items-center ">
                             <li class="nav-item">
-                                <a class="nav-link nav-login" href="{{route('categorias')}}">Categorias</a>
+                                <a class="nav-link nav-login" href="{{route('jornada.categorias')}}">Categorias</a>
                             </li>
                         </ul>
 
                     <ul class="navbar-nav mr-4 d-flex align-items-center ">
                         <li class="nav-item">
-                            <a class="nav-link nav-login" href="{{route('marcas')}}">Marcas</a>
+                            <a class="nav-link nav-login" href="{{route('jornada.marcas')}}">Marcas</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav mr-4 d-flex align-items-center ">
                         <li class="nav-item">
                             <a class="nav-link nav-login" href="">Produtos</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav mr-4 d-flex align-items-center ">
+                        <li class="nav-item">
+                            <a class="nav-link nav-login" href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                Logout
+                            </a>
+                            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
                         </li>
                     </ul>
 

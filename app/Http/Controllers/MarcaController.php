@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Marca;
 use Illuminate\Http\Request;
 
 class MarcaController extends Controller
@@ -9,7 +10,8 @@ class MarcaController extends Controller
 
 
     public function listaMarcas(){
-        return view('inicio-jornada.marcas');
+        $marcas = Marca::where('ativo', 1)->orderBy('nome', 'asc')->get();
+        return view('components.marcas', compact('marcas'));
     }
     /**
      * Display a listing of the resource.

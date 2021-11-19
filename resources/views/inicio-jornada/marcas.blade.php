@@ -36,21 +36,8 @@
                     <a class="card-marca">
                         <img src="{{asset('assets/images/itallian.png')}}" alt="">
                     </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
+
+
                 </div>
             </div>
         </div>

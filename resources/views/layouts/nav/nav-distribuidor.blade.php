@@ -34,6 +34,19 @@
                         </li>
                     </ul>
 
+                    <ul class="navbar-nav mr-4 d-flex align-items-center ">
+                        <li class="nav-item">
+                            <a class="nav-link nav-login" href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                Logout
+                            </a>
+                            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
+                        </li>
+                    </ul>
+
                     <ul class="navbar-nav d-flex align-items-center ">
                         <li class="nav-item ">
                             <a class="nav-link nav-icons m-0" href="#">
