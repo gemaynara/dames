@@ -38,9 +38,10 @@
                             </div>
                             <div class="descripton">
                                 <h5 class="font-weight-lighter">{{$item->produto}}</h5>
-                                <a class="remove-action remover-item" data-id="{{$item->id}}"
+                                <a class="remove-action remover-item" data-id="{{$item->id}}" data-geanne=""
                                    data-route="{{route('salao.remover-produto-carrinho', $item->id)}}">Remover</a>
                             </div>
+
 
                         </th>
                         <td>@money($item->valor_unitario)</td>
@@ -57,7 +58,6 @@
             <div class="frete d-flex justify-content-end">
 
                 <form action="{{route('salao.pagamento')}}" method="get">
-                    @csrf
                     <div class="valor d-flex align-items-center justify-content-center">
                         <p class="p-0 my-0 mx-2">Sub-total R$ @money($subtotalCarrinho)</p>
                         <button type="submit" class="btn-comprar-rapido">Finalizar</button>

@@ -14,7 +14,7 @@
                     </div>
                     <div class="footer-card-produto">
                         <h4 class="name-product">{{$produto->nome}}</h4>
-                        <h5 class="marca-product">{{$produto->marca}}]</h5>
+                        <h5 class="marca-product">{{$produto->marca}}</h5>
                         <h4 class="preco-produto p-0 mb-0 mt-3">R$ @money($produto->valor)</h4>
                         <p class="qtd-parcelas p-0 m-0">Em até 12x sem juros</p>
                     </div>

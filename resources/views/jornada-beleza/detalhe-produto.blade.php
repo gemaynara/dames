@@ -12,14 +12,14 @@
                     <div class="">
                         <div class="card-img-product d-flex">
                             <div class="min-photo">
-                                @foreach($produto['imagens'] as $img)
                                     <ul>
+                                        @foreach($produto['imagens'] as $img)
                                         <li>
                                             <img class="image-list"
                                                 src="{{asset('images/produtos/'. $img->diretorio)}}"
                                                 alt="" width="50px">
-                                        </li>
 
+                                        </li>
                                         @endforeach
                                     </ul>
                             </div>

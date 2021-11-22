@@ -34,7 +34,7 @@ class ProdutoService
             ->join('marcas', 'marcas.id', 'produtos.marca_id')
             ->select("produtos.*", "marcas.nome as marca")
             ->orderBy('qnt_vendida', 'desc')
-            ->limit(6)
+            ->limit(10)
             ->get();
     }
 
