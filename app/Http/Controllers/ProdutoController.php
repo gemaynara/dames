@@ -17,13 +17,20 @@ class ProdutoController extends Controller
     public function getProdutosSalao()
     {
         $produtos = (new ProdutoService)->getProdutos();
+
         return view('jornada-beleza.produtos', compact('produtos'));
     }
 
-    public function getMaisVendidos()
+    public function getDetalhesProduto(Request $request)
     {
+        $id = $request->id;
+        $produto = (new ProdutoService())->getDetalhesProduto($id);
+        return view('jornada-beleza.detalhe-produto', ['produto' => $produto]);
+    }
 
-        return view('components.produtos', compact('maisVendidos'));
+    public function getProdutosCategoria(Request $request){
+        $produtos = (new ProdutoService)->getProdutosCategoria($request->categoria);
+        return view('jornada-beleza.produtos', compact('produtos'));
     }
 
     public function index()

@@ -12,6 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::group(['prefix' => 'jornada'], function () {
+    Route::get('/marcas', 'MarcaController@listaMarcas')->name('jornada.marcas');
+    Route::get('/categorias', 'CategoriaController@listaCategorias')->name('jornada.categorias');
+    Route::get('/carrinho', 'PedidoController@verCarrinho')->name('jornada.carrinho');
+
+    Route::get('/produtos', 'ProdutoController@getProdutosSalao')->name('salao.produtos');
+    Route::get('/produtos/{categoria}', 'ProdutoController@getProdutosCategoria')->name('salao.produtos.categoria');
+    Route::get('/produtos/{id}/{slug}', 'ProdutoController@getDetalhesProduto')->name('salao.produtos.detalhes');
+});
+
+
 Route::group(['middleware' => ['guest']], function () {
     Route::get('/', 'HomeController@welcome')->name('welcome')->middleware('guest');
 
@@ -22,7 +34,7 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/esqueci-senha', 'Auth\ForgotPasswordController@showForgetPasswordForm')->name('forgot-password');
     Route::post('/esqueci-senha', 'Auth\ForgotPasswordController@submitForgetPasswordForm')->name('forgot-password');
     Route::get('alterar-senha/{token}', 'Auth\ForgotPasswordController@showResetPasswordForm')->name('reset-password-token');
-    Route::post('/alterar-senha','Auth\ForgotPasswordController@submitResetPasswordForm')->name('reset-password');
+    Route::post('/alterar-senha', 'Auth\ForgotPasswordController@submitResetPasswordForm')->name('reset-password');
 
 
     Route::get('/login', 'Auth\LoginController@showLoginForm');
@@ -31,36 +43,22 @@ Route::group(['middleware' => ['guest']], function () {
 
 //Auth::routes();
 
-Route::group(['prefix'=>'jornada'], function (){
-    Route::get('/marcas', 'MarcaController@listaMarcas')->name('jornada.marcas');
-    Route::get('/categorias', 'CategoriaController@listaCategorias')->name('jornada.categorias');
-    Route::get('/carrinho', 'CarrinhoController@verCarrinho')->name('ver-carrinho');
-});
 
 Route::group(['middleware' => ['auth']], function () {
 
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('home', 'HomeController@index')->name('home');
 
-    Route::group(['prefix'=>'salao'], function (){
-        Route::get('/produtos', 'ProdutoController@getProdutosSalao')->name('salao.produtos');
+    Route::group(['prefix' => 'salao'], function () {
 
-
-
-        Route::get('/detail', function () {
-            return view('jornada-beleza/detail');
-        })->name('detail');
-
-
-
-        Route::get('/pagamento', function () {
-            return view('jornada_beleza.pay');
-        })->name('pagamento');
+        Route::post('/add-produto-carrinho', 'PedidoController@addProdutoCarrinho')->name('salao.add-produto-carrinho');
+        Route::delete('/remover/{id}', 'PedidoController@removerItemCarrinho')->name('salao.remover-produto-carrinho');
+        Route::get('/pagamento', 'PagamentoController@inicioPagamento')->name('salao.pagamento');
 
 
     });
 
-    Route::group(['prefix'=>'distribuidor'], function (){
+    Route::group(['prefix' => 'distribuidor'], function () {
 
         Route::get('/produtos', 'ProdutoController@getProdutosDistribuidor')->name('distribuidor.produtos');
 
@@ -73,7 +71,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/jornada_distribuidor/vendas', function () {
             return view('jornada_distribuidor.visao-vendas');
         })->name('vendas');
-
 
 
         Route::get('/jornada_distribuidor/categories', function () {

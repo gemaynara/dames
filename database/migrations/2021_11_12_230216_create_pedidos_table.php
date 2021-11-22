@@ -17,16 +17,17 @@ class CreatePedidosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('endereco_id');
+            $table->unsignedBigInteger('endereco_id')->nullable();
             $table->foreign('endereco_id')->references('id')->on('enderecos');
 
             $table->unsignedBigInteger('cupom_id')->nullable();
             $table->foreign('cupom_id')->references('id')->on('cupons');
 
             $table->dateTime('data_compra')->nullable();
-            $table->decimal('subtotal', 11,2)->default(0.00);
-            $table->decimal('desconto', 11,2)->default(0.00);
-            $table->decimal('total', 11,2)->default(0.00);
+            $table->decimal('subtotal', 11, 2)->default(0.00);
+            $table->decimal('desconto', 11, 2)->default(0.00);
+            $table->decimal('total', 11, 2)->default(0.00);
+            $table->string('status')->default('no carrinho');
             $table->timestamps();
         });
     }

@@ -12,25 +12,26 @@
                     {{ Breadcrumbs::render('produtos-salao') }}
                 </nav>
                 <div class="body-product mt-3">
+
                     <section class="mt-3 d-flex flex-wrap">
-
-                        <div class="d-flex justify-content-between">
-                            <a href="{{route('detail')}}">
-                                <div class="mr-2 card-product" style="">
-                                    <img
-                                        src="https://a-static.mlcdn.com.br/618x463/iphone-xr-64gb-preto-apple/apple10/312127/cad808bbfb68ba810ab38ca2820aa8af.jpg"
-                                        class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                            iPhone XR Apple 64GB Preto 6,1” 12MP iOS
-                                        </p>
-                                        <h4>R$ 3.254,50</h4>
-                                        <p>Lorem ipsum dolor sit amet, consecteturlibero eros.</p>
+                        @foreach($produtos as $produto)
+                            <div class="d-flex justify-content-between">
+                                <a href="{{route('salao.produtos.detalhes',[ 'id'=>$produto->id,'slug'=> $produto->slug])}}">
+                                    <div class="mr-2 card-product" style="">
+                                        <img
+                                            src="https://a-static.mlcdn.com.br/618x463/iphone-xr-64gb-preto-apple/apple10/312127/cad808bbfb68ba810ab38ca2820aa8af.jpg"
+                                            class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                {{$produto->nome}}
+                                            </p>
+                                            <h4>R$ @money($produto->valor)</h4>
+                                            <p class="product-description">{{$produto->descricao}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-
-
+                                </a>
+                            </div>
+                        @endforeach
                     </section>
 
                     <nav aria-label="Page navigation example" class="mt-5">

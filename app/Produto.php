@@ -25,8 +25,4 @@ class Produto extends Model
         'ativo',
     ];
 
-    public static function getProducts(){
-
-    }
-
 }

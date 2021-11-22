@@ -31,6 +31,14 @@ Breadcrumbs::for('produtos-distribuidor', function (BreadcrumbTrail $trail) {
     $trail->push('Produtos', route('distribuidor.produtos'));
 });
 
+// Home > Categoria > Marca > Produto
+Breadcrumbs::for('categoria-produto', function (BreadcrumbTrail $trail, $categoria, $produto) {
+    $trail->parent('home');
+    $trail->push($categoria, route('salao.produtos.categoria', $categoria));
+    $trail->push($produto, route('salao.produtos'));
+});
+
+
 // Home > Blog > [Category]
 Breadcrumbs::for('category', function (BreadcrumbTrail $trail, $category) {
     $trail->parent('blog');

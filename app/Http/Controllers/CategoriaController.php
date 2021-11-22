@@ -13,6 +13,7 @@ class CategoriaController extends Controller
         return view('inicio-jornada.categorias', compact('categorias'));
     }
 
+
     public function index()
     {
         //

@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Dames') }}</title>
 
     <!-- Scripts -->
@@ -23,6 +20,9 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
 <div id="app">
@@ -44,5 +44,7 @@
 <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
 <script src="{{asset('js/jquery.mask.min.js')}}"></script>
 <script src="{{asset('js/validate.js')}}"></script>
+<script src="{{asset('js/sweetalert2.all.min.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
 </body>
 </html>
