@@ -25,7 +25,7 @@
                             </div>
                             <div class="max-photo ml-5">
                                 <img class="current-image"
-                                    src="https://a-static.mlcdn.com.br/618x463/iphone-xr-apple-64gb-preto-61-12mp-ios/magazineluiza/155610600/046ca7441970f5677a701277854122db.jpg"
+                                     src="{{asset('images/produtos/'. $produto['imagens'][0]->diretorio)}}"
                                     alt="" width="100px">
                             </div>
                         </div>

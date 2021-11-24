@@ -10,7 +10,7 @@
             @foreach($maisVendidos as $produto)
                 <div class="card-produto">
 
-                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produto.png')}}')">
+                    <div class="header-card-produto" style="background: url('{{asset('assets/images/produtos/'. $produto->imagem)}}')">
                     </div>
                     <div class="footer-card-produto">
                         <h4 class="name-product">{{$produto->nome}}</h4>
