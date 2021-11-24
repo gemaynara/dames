@@ -16,7 +16,7 @@ class ProdutoService
         if ($distrubuidor) {
             $produtos->where('distribuidor_id', $distrubuidor);
         }
-        return $produtos->get();
+        return $produtos->paginate(9);
     }
 
     public function getProdutosCategoria($categoria)

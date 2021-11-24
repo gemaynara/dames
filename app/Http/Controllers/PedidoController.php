@@ -65,9 +65,12 @@ class PedidoController extends Controller
 
     public function verCarrinho()
     {
-        $user = auth()->user()->id;
-
-        $carrinho = (new PedidoService())->getPedidoCarrinho($user);
+        if (auth()->guest()){
+            $carrinho = [];
+        }else{
+            $user =  auth()->user()->id;
+            $carrinho = (new PedidoService())->getPedidoCarrinho($user);
+        }
 
         return view('jornada-beleza.carrinho', compact('carrinho'));
     }

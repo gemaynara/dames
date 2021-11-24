@@ -46,5 +46,6 @@
 <script src="{{asset('js/validate.js')}}"></script>
 <script src="{{asset('js/sweetalert2.all.min.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/paginate.js')}}"></script>
 </body>
 </html>

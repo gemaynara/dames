@@ -14,9 +14,14 @@ class ProdutoController extends Controller
         return view('jornada-distribuidor.produtos', compact($produtos));
     }
 
-    public function getProdutosSalao()
+    public function getProdutosSalao(Request $request)
     {
         $produtos = (new ProdutoService)->getProdutos();
+
+        if ($request->ajax()) {
+            $view = view('components.lista-produtos', compact('produtos'))->render();
+            return response()->json(['html' => $view]);
+        }
 
         return view('jornada-beleza.produtos', compact('produtos'));
     }
@@ -28,9 +33,20 @@ class ProdutoController extends Controller
         return view('jornada-beleza.detalhe-produto', ['produto' => $produto]);
     }
 
-    public function getProdutosCategoria(Request $request){
+    public function getProdutosCategoria(Request $request)
+    {
         $produtos = (new ProdutoService)->getProdutosCategoria($request->categoria);
+
         return view('jornada-beleza.produtos', compact('produtos'));
+    }
+
+    public function avaliarProduto(Request $request)
+    {
+        $rating = new Rating;
+        $rating->user_id = Auth::id();
+        $rating->rating = $request->input('star');
+        $post->ratings()->save($rating);
+        return redirect()->back();
     }
 
     public function index()

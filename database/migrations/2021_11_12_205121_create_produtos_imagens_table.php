@@ -17,10 +17,8 @@ class CreateProdutosImagensTable extends Migration
             $table->id();
             $table->unsignedBigInteger('produto_id');
             $table->foreign('produto_id')->references('id')->on('produtos');
-            $table->string('nome_arquivo', 300);
             $table->string('diretorio', 400);
-            $table->string('formato', 20);
-            $table->integer('tamanho');
+            $table->tinyInteger('imagem_principal')->default(0);
             $table->tinyInteger('ativo')->default(1);
             $table->timestamps();
         });

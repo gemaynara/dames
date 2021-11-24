@@ -28,6 +28,10 @@ class CreateProdutosTable extends Migration
             $table->decimal('valor_desconto')->default(0.00);
             $table->integer('qnt_vendida')->default(0);
             $table->string('slug',500)->nullable();
+            $table->decimal('peso',7,3)->nullable();
+            $table->decimal('altura',7,3)->nullable();
+            $table->decimal('largura',7,3)->nullable();
+            $table->decimal('comprimento',7,3)->nullable();
             $table->tinyInteger('ativo')->default(1);
             $table->timestamps();
         });

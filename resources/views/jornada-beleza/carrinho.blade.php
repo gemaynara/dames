@@ -5,7 +5,7 @@
     <div class="container py-5 min-height-card">
 
 
-        @if(count($carrinho['produtos']) ==0)
+        @if(!isset($carrinho['produtos']))
             <div class="header-carrinho">
                 <h4 class="my-3">Carrinho Vazio</h4>
                 <a href="{{route('salao.produtos')}}" class="my-2">Comece inserindo aqui</a>

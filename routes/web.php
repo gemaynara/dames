@@ -20,7 +20,7 @@ Route::group(['prefix' => 'jornada'], function () {
 
     Route::get('/produtos', 'ProdutoController@getProdutosSalao')->name('salao.produtos');
     Route::get('/produtos/{categoria}', 'ProdutoController@getProdutosCategoria')->name('salao.produtos.categoria');
-    Route::get('/produtos/{id}/{slug}', 'ProdutoController@getDetalhesProduto')->name('salao.produtos.detalhes');
+    Route::get('/produto/{id}/{slug}', 'ProdutoController@getDetalhesProduto')->name('salao.produtos.detalhes');
 });
 
 

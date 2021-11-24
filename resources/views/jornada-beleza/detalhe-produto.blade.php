@@ -35,11 +35,19 @@
             <div class="description-product ml-5 col-lg-5">
                 <h2>{{$produto['produto']->nome}}</h2>
                 <p> {{$produto['produto']->descricao}} </p>
-                <h3> R$ @money($produto['produto']->valor)
-                    @if(!is_null($produto['produto']->valor_desconto))
-                        <sub><span>R$ @money($produto['produto']->valor_desconto)</span></sub>
-                    @endif
-                </h3>
+                @if(auth()->guest())
+                    <h3 style="filter: blur(4px)!important;">R$ @money(rand(0,999))
+                            <sub><span>R$ @money($produto['produto']->valor_desconto)</span></sub>
+                    </h3>
+
+                @else
+                    <h3> R$ @money($produto['produto']->valor)
+                        @if(!is_null($produto['produto']->valor_desconto))
+                            <sub><span>R$ @money($produto['produto']->valor_desconto)</span></sub>
+                        @endif
+                    </h3>
+                @endif
+
 
 
                 {{--                <a href="" class="btn btn-puper"><i class="fas fa-shopping-cart"></i> Comprar</a>--}}

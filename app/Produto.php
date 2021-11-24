@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use willvincent\Rateable\Rateable;
 class Produto extends Model
 {
+    use Rateable;
     public $timestamps = true;
     protected $table = 'produtos';
     protected $primaryKey = 'id';

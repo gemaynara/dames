@@ -9,7 +9,7 @@
             @foreach($categorias as $categoria)
             <div class="card-categoria-home">
                 <img src="{{asset('images/categorias/'. $categoria->imagem)}}" alt="{{$categoria->nome}}" width="100px">
-                <a class="text-category" >{{$categoria->nome}}</a>
+                <a class="text-category"  href="{{route('salao.produtos.categoria', $categoria->nome)}}">{{$categoria->nome}}</a>
             </div>
             @endforeach
         </div>
