@@ -85,7 +85,7 @@
                 <?php $subtotalItems = 0.00 ; $frete = 185.33?>
                 @foreach($items['produtos'] as $item)
                     <div class="card-product-pay d-flex  ">
-                        <img src="{{asset('assets/images/produto.png')}}" class="img-product-pay" alt="" >
+                        <img src="{{asset('images/produtos/'. $item->imagem)}}" class="img-product-pay" alt="" >
                         <div class="d-flex flex-column detalhe-product-pay">
                             <h3>{{$item->produto}}</h3>
                             <h4>R$ @money($item->subtotal)</h4>
