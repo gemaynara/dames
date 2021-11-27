@@ -4,7 +4,9 @@
 }
 
 .btn-primary-banner {
-    padding: 31px;
+    //width: 133px;
+    height: 31px;
+    padding: 5px 9px;
     background: $color-primary;
     border-radius: 3px;
     text-align: center;
@@ -13,6 +15,41 @@
     font-size: 14px;
     color: white;
 }
+
+.avaliacao {
+    width: 122px;
+    height: 32px;
+    border: 1px solid #4D22C5;
+}
+
+.add_list {
+    display: flex;
+    width: 74px;
+    height: 32px;
+    align-items: center;
+    justify-content: space-around;
+    background: #FFFFFF;
+    border: 1px solid #4D22C5;
+    box-sizing: border-box;
+    color: #4D22C5;
+    border-radius: 4px;
+}
+
+.link-login {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    text-decoration-line: underline;
+
+    color: #000000;
+}
+
+
 
 .left {
     display: flex;
@@ -135,6 +172,9 @@
     }
 }
 
+.title-salao {
+    font-size: 46px;
+}
 
 .banner-landerpage {
     background: url("./assets/images/banner-home.svg") no-repeat;
@@ -167,7 +207,8 @@
     right: 0px;
     height: 420px;
 }
-.content-banner{
+
+.content-banner {
     height: 547px;
 }
 
@@ -185,7 +226,7 @@
     border-radius: 10px;
 }
 
-.text-category{
+.text-category {
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
@@ -194,7 +235,6 @@
     /* identical to box height */
 
     letter-spacing: 0.5px;
-margin-top: 10px;
+    margin-top: 10px;
     color: #4D22C5;
 }
-

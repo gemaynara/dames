@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 .brand-nav {
-  width: 145px;
+  width: 175px;
 }
 
 .navbar {
@@ -43,9 +43,18 @@
   border-radius: 5px;
 }
 
+.text-color-primary {
+  color: #4D22C5;
+}
+
+.text-underlineo {
+  text-decoration: underline;
+}
+
 .btn-primary-nav {
   width: 133px;
-  padding: 31px;
+  height: 31px;
+  padding: 5px 9px;
   background: #4D22C5;
   border-radius: 3px;
   text-align: center;
@@ -59,7 +68,7 @@
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   -webkit-text-decoration-line: underline;
@@ -257,7 +266,8 @@
 }
 
 .btn-primary-banner {
-  padding: 31px;
+  height: 31px;
+  padding: 5px 9px;
   background: #4D22C5;
   border-radius: 3px;
   text-align: center;
@@ -265,6 +275,39 @@
   font-family: Open Sans;
   font-size: 14px;
   color: white;
+}
+
+.avaliacao {
+  width: 122px;
+  height: 32px;
+  border: 1px solid #4D22C5;
+}
+
+.add_list {
+  display: flex;
+  width: 74px;
+  height: 32px;
+  align-items: center;
+  justify-content: space-around;
+  background: #FFFFFF;
+  border: 1px solid #4D22C5;
+  box-sizing: border-box;
+  color: #4D22C5;
+  border-radius: 4px;
+}
+
+.link-login {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #000000;
 }
 
 .left {
@@ -376,8 +419,12 @@
   color: #4D22C5;
 }
 
+.title-salao {
+  font-size: 46px;
+}
+
 .banner-landerpage {
-  background: url(/images/banner-home.svg?78a79ca831acc2f310459552b0400a5d) no-repeat;
+  background: url(/images/banner-home.svg?3eb2973c507ed7b43501db9a6075fe85) no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -596,8 +643,8 @@
 .foto-fundo-line {
   z-index: 1;
   position: relative;
-  left: 460px;
-  height: 361px;
+  left: 477px;
+  height: 371px;
 }
 
 .text-slider h1 {
@@ -967,8 +1014,8 @@ ul {
 }
 
 .card-product-pay img {
-  width: 174px;
-  height: 156px;
+  width: 150px;
+  height: 146px;
   margin-right: 30px;
   border-radius: 9px;
 }

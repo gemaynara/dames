@@ -2,7 +2,7 @@
     <div class="container">
         <div class="header-best-marcas d-flex ml-3">
             <h4 class="font-weight-bold mr-2">Categorias</h4>
-            <a href="{{route('jornada.categorias')}}" class="p-0 m-0">Visualizar todas as categoriaas</a>
+            <a href="{{route('jornada.categorias')}}" class="pt-2 text-underlineo text-color-primary pb-0 m-0">Visualizar todas as categoriaas</a>
         </div>
 
         <div class="d-flex flex-wrap my-3">

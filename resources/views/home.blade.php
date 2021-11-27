@@ -5,7 +5,7 @@
         <div class="container">
             <div class="banner d-flex justify-content-between">
                 <div class="left d-flex flex-column">
-                    <h1>O lugar perfeito para seu salão beleza!</h1>
+                    <h1 class="title-salao">O lugar perfeito para <br> seu salão beleza!</h1>
                     <div class="options d-flex">
                         <a class="nav-link btn-primary-banner text-light" href="{{route('pre-register')}}">Efetuar cadastro</a>
                         <a class="nav-link nav-login" href="{{route('login')}}">Já tenho conta</a>

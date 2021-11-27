@@ -38,8 +38,8 @@
                             </div>
                             <div class="descripton">
                                 <h5 class="font-weight-lighter">{{$item->produto}}</h5>
-                                <a class="remove-action remover-item" data-id="{{$item->id}}" data-geanne=""
-                                   data-route="{{route('salao.remover-produto-carrinho', $item->id)}}">Remover</a>
+                                <a class="remove-action remover-item" data-id="{{$item->id}}"
+                                   data-route="{{route('salao.add-produto-favorito', $item->id)}}">Remover</a>
                             </div>
 
 

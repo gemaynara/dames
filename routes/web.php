@@ -54,6 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/add-produto-carrinho', 'PedidoController@addProdutoCarrinho')->name('salao.add-produto-carrinho');
         Route::delete('/remover/{id}', 'PedidoController@removerItemCarrinho')->name('salao.remover-produto-carrinho');
         Route::get('/pagamento', 'PagamentoController@inicioPagamento')->name('salao.pagamento');
+        
+        Route::post('/add-produto-favorito', 'ProdutoController@addProdutofavorito')->name('salao.add-produto-favorito');
 
 
     });

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Produto;
+use App\ProdutoFavorito;
 use App\Services\ProdutoService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProdutoController extends Controller
 {
@@ -17,6 +19,7 @@ class ProdutoController extends Controller
     public function getProdutosSalao(Request $request)
     {
         $produtos = (new ProdutoService)->getProdutos();
+        $produtos->favoritos = (new ProdutoService)->getProdutosFavaritos();
 
         if ($request->ajax()) {
             $view = view('components.lista-produtos', compact('produtos'))->render();
@@ -47,6 +50,22 @@ class ProdutoController extends Controller
         $rating->rating = $request->input('star');
         $post->ratings()->save($rating);
         return redirect()->back();
+    }
+
+    public function addProdutofavorito(Request $request)
+    {
+        $produto = ProdutoFavorito::where('produto_id', $request->id)->where('user_id', Auth::user()->id)->get();
+
+        if (sizeof($produto) == 0) {
+            $favorito = new ProdutoFavorito;
+            $favorito->user_id = Auth::user()->id;
+            $favorito->produto_id = $request->id;
+            $favorito->save();
+        } else {
+            return response()->json('Produto já esta nos seu favoritos');
+        }
+
+
     }
 
     public function index()

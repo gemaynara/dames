@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-between">
-        <div class="right-pay col-lg-6 py-5">
+        <div class="right-pay col-lg-5 py-5">
             <nav aria-label="breadcrumb p-0 m-0">
                 <ol class="breadcrumb bg-none px-0 mx-0">
                     <li class="breadcrumb-item font-weight-bold "><a href="#">Home</a></li>
@@ -79,12 +79,12 @@
 
         </div>
 
-        <div class="left-pay col py-5">
+        <div class="left-pay col-md-5 py-5">
 
             <div class="header-products pb-5">
                 <?php $subtotalItems = 0.00 ; $frete = 185.33?>
                 @foreach($items['produtos'] as $item)
-                    <div class="card-product-pay d-flex  ">
+                    <div class="card-product-pay d-flex mb-1 ">
                         <img src="{{asset('assets/images/produto.png')}}" class="img-product-pay" alt="" >
                         <div class="d-flex flex-column detalhe-product-pay">
                             <h3>{{$item->produto}}</h3>

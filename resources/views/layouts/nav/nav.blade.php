@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-        <a class="navbar-brand " href="{{url('/')}}"><img class="brand-nav" src="{{asset('assets/images/logo.svg')}}"
+        <a class="navbar-brand mr-2 " href="{{url('/')}}"><img class="brand-nav" src="{{asset('assets/images/logo.svg')}}"
                                                           alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex justify-content-between w-100">
-                <form class="form-inline my-2 my-lg-0 ml-3">
+                <form class="form-inline my-2 my-lg-0 ml-5">
                     <div class="form-search-custom d-flex justify-content-between">
                         <input class="form-custom mr-sm-2" type="search" placeholder="Busque um produto, loja ou marca">
                         <span class="icon-search"><i class="fas fa-search"></i></span>
@@ -19,10 +19,10 @@
 
                         <ul class="navbar-nav mr-4 d-flex align-items-center ">
                             <li class="nav-item mr-3">
-                                <a class="nav-link btn-primary-nav text-light" href="{{route('pre-register')}}">Cadastrar-me</a>
+                                <a class="btn-primary-nav text-light" href="{{route('pre-register')}}">Cadastrar-me</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link nav-login" href="{{route('login')}}">Faça Login</a>
+                                <a class="text-color-primary nav-login" href="{{route('login')}}">Faça Login</a>
                             </li>
                         </ul>
 

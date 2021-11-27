@@ -4,7 +4,9 @@ namespace App\Services;
 
 use App\Categoria;
 use App\Produto;
+use App\ProdutoFavorito;
 use App\ProdutoImagens;
+use Illuminate\Support\Facades\Auth;
 
 class ProdutoService
 {
@@ -46,5 +48,15 @@ class ProdutoService
 
         $imagens = ProdutoImagens::where('produto_id', $id)->get();
         return ['produto' => $produto, 'imagens' => $imagens];
+    }
+
+    public function getProdutosFavaritos()
+    {
+        if (\auth()->check()) {
+            return ProdutoFavorito::where('user_id', Auth::user()->id)->get();
+        } else {
+            return $produtos = ['produto_id' => 0];
+        }
+
     }
 }
