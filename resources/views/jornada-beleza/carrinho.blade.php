@@ -33,7 +33,7 @@
                         <th class="d-flex">
                             <div class="img-product">
                                 <img
-                                    src="https://www.nagem.com.br/produto/imagens/534951"
+                                    src="{{asset('images/produtos/'.$item->imagem)}}"
                                     alt="">
                             </div>
                             <div class="descripton">
