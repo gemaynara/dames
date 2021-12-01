@@ -12,21 +12,21 @@
                     <div class="">
                         <div class="card-img-product d-flex">
                             <div class="min-photo">
-                                    <ul>
-                                        @foreach($produto['imagens'] as $img)
+                                <ul>
+                                    @foreach($produto['imagens'] as $img)
                                         <li>
                                             <img class="image-list"
-                                                src="{{asset('images/produtos/'. $img->diretorio)}}"
-                                                alt="" width="50px">
+                                                 src="{{asset('images/produtos/'. $img->diretorio)}}"
+                                                 alt="" width="50px">
 
                                         </li>
-                                        @endforeach
-                                    </ul>
+                                    @endforeach
+                                </ul>
                             </div>
                             <div class="max-photo ml-5">
                                 <img class="current-image"
-                                     src="{{asset('images/produtos/'. $produto['imagens'][0]->diretorio)}}"
-                                    alt="" width="100px">
+                                     src="{{asset('images/produtos/' . $produto['imagens'][0]->diretorio)}}"
+                                     alt="" width="100px">
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                 <p> {{$produto['produto']->descricao}} </p>
                 @if(auth()->guest())
                     <h3 style="filter: blur(4px)!important;">R$ @money(rand(0,999))
-                            <sub><span>R$ @money($produto['produto']->valor_desconto)</span></sub>
+                        <sub><span>R$ @money($produto['produto']->valor_desconto)</span></sub>
                     </h3>
 
                 @else

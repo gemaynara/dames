@@ -40,6 +40,10 @@ class ProdutoController extends Controller
     {
         $produtos = (new ProdutoService)->getProdutosCategoria($request->categoria);
 
+        if ($request->ajax()) {
+            $view = view('components.lista-produtos', compact('produtos'))->render();
+            return response()->json(['html' => $view]);
+        }
         return view('jornada-beleza.produtos', compact('produtos'));
     }
 

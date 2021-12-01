@@ -33,7 +33,7 @@
                         <th class="d-flex">
                             <div class="img-product">
                                 <img
-                                    src="{{asset('images/produtos/'.$item->imagem)}}"
+                                src="{{ is_null($item->imagem) ? asset('images/no-photo.jpg'): asset('images/produtos/'.$item->imagem)}}"
                                     alt="">
                             </div>
                             <div class="descripton">
