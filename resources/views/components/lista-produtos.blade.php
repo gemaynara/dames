@@ -24,10 +24,14 @@
                     <div class="add_list favorito-action" data-id="{{$produto->id}}"
                          data-route="{{route('salao.add-produto-favorito', $produto->id)}}">
                         @foreach($produtos->favoritos as $favoritos)
-                            @if( \Illuminate\Support\Facades\Auth::check() && $favoritos->produto_id == $produto->id)
-                                <i class="{{$favoritos->produto_id == $produto->id ? 'fas fas-heart' : ''}} text-danger"></i>
+                            @if( $favoritos->produto_id == $produto->id)
+                                <i class="fas fa-heart text-danger"></i>
                             @endif
+
                         @endforeach
+                            @if($favoritos->produto_id != $produto->id)
+                                <i class="fas fa-heart"></i>
+                            @endif
                         + <span class="p-0 m-0">lista</span>
 
 
