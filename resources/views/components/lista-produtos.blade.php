@@ -30,7 +30,7 @@
 
                         @endforeach
                             @if($favoritos->produto_id != $produto->id)
-                                <i class="fas fa-heart"></i>
+                                <i class="far fa-heart"></i>
                             @endif
                         + <span class="p-0 m-0">lista</span>
 
