@@ -19,7 +19,7 @@ class ProdutoController extends Controller
     public function getProdutosSalao(Request $request)
     {
         $produtos = (new ProdutoService)->getProdutos();
-        $produtos->favoritos = (new ProdutoService)->getProdutosFavaritos();
+        $produtos->favoritos = (new ProdutoService)->getProdutosFavorito();
 
         if ($request->ajax()) {
             $view = view('components.lista-produtos', compact('produtos'))->render();

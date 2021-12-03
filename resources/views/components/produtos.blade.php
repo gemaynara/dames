@@ -1,9 +1,9 @@
 <?php $maisVendidos = (new \App\Services\ProdutoService())->maisVendidos(); ?>
-<section class="my-3">
+<section class="py-3">
     <div class="container">
-        <div class="header-best-marcas d-flex">
+        <div class="header-best-marcas d-flex ml-3">
             <h4 class="font-weight-bold mr-2">Produtos mais vendidos</h4>
-            <a href="{{route('salao.produtos')}}" class="p-0 m-0">Visualizar todos</a>
+            <a href="{{route('salao.produtos')}}" class="pt-2 text-underlineo text-color-primary pb-0 m-0">Visualizar todos</a>
         </div>
 
         <div class="d-flex flex-wrap my-3">

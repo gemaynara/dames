@@ -88,3 +88,43 @@ $(document).ready(function () {
     })
 });
 
+$('#drop-navigate').on('click', function (e) {
+    e.preventDefault()
+
+   if($('#drop-nav').hasClass('hide-master')){
+       $('#drop-nav').removeClass('hide-master')
+   }else{
+       $('#drop-nav').addClass('hide-master')
+   }
+
+})
+
+$(document).ready(function () {
+    $('.favorito-action').on('click', function (e) {
+        e.preventDefault();
+        var id = $(this).data('id');
+        var url = $(this).data('route');
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: url,
+            data: {
+                id: id,
+            },
+            type: 'POST',
+            success: function (response) {
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log('error ')
+            }
+        });
+
+    })
+});
+

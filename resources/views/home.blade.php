@@ -7,7 +7,8 @@
                 <div class="left d-flex flex-column">
                     <h1 class="title-salao">O lugar perfeito para <br> seu salão beleza!</h1>
                     <div class="options d-flex">
-                        <a class="nav-link btn-primary-banner text-light" href="{{route('pre-register')}}">Efetuar cadastro</a>
+                        <a class="nav-link btn-primary-banner text-light" href="{{route('pre-register')}}">Efetuar
+                            cadastro</a>
                         <a class="nav-link nav-login" href="{{route('login')}}">Já tenho conta</a>
                     </div>
                 </div>
@@ -17,40 +18,40 @@
             </div>
         </div>
     </header>
-    <div class="container passos">
-        <options class="d-flex justify-content-around">
-            <div class="card-passos d-flex align-items-center">
-                <div class="icon-card">
-                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">
-                </div>
-                <div class="content-card-passos">
-                    <h4>Compras rapidas </h4>
-                    <p>Entregamos em até 24hrs após a confirmação da compra</p>
-                </div>
-            </div>
+    {{--    <div class="container passos">--}}
+    {{--        <options class="d-flex justify-content-around">--}}
+    {{--            <div class="card-passos d-flex align-items-center">--}}
+    {{--                <div class="icon-card">--}}
+    {{--                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">--}}
+    {{--                </div>--}}
+    {{--                <div class="content-card-passos">--}}
+    {{--                    <h4>Compras rapidas </h4>--}}
+    {{--                    <p>Entregamos em até 24hrs após a confirmação da compra</p>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
 
-            <div class="card-passos d-flex align-items-center">
-                <div class="icon-card">
-                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">
-                </div>
-                <div class="content-card-passos mt-3">
-                    <h4>Compras rapidas </h4>
-                    <p>Entregamos em até 24hrs após a confirmação da compra</p>
-                </div>
-            </div>
+    {{--            <div class="card-passos d-flex align-items-center">--}}
+    {{--                <div class="icon-card">--}}
+    {{--                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">--}}
+    {{--                </div>--}}
+    {{--                <div class="content-card-passos mt-3">--}}
+    {{--                    <h4>Compras rapidas </h4>--}}
+    {{--                    <p>Entregamos em até 24hrs após a confirmação da compra</p>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
 
-            <div class="card-passos d-flex align-items-center">
-                <div class="icon-card">
-                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">
-                </div>
-                <div class="content-card-passos">
-                    <h4>Compras rapidas </h4>
-                    <p>Entregamos em até 24hrs após a confirmação da compra</p>
-                </div>
-            </div>
+    {{--            <div class="card-passos d-flex align-items-center">--}}
+    {{--                <div class="icon-card">--}}
+    {{--                    <img src="{{asset('assets/images/veiculo.svg')}}" alt="">--}}
+    {{--                </div>--}}
+    {{--                <div class="content-card-passos">--}}
+    {{--                    <h4>Compras rapidas </h4>--}}
+    {{--                    <p>Entregamos em até 24hrs após a confirmação da compra</p>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
 
-        </options>
-    </div>
+    {{--        </options>--}}
+    {{--    </div>--}}
 
 
     {{--    <section class="my-3">--}}
@@ -65,8 +66,9 @@
     {{--        </div>--}}
     {{--    </section>--}}
 
-    @include('components.products')
-
+    <div class="bg-primary">
+        @include('components.products')
+    </div>
     <section class="banner-landerpage">
         <div class="container">
             <div class="content-banner-landerpage align-items-center">
