@@ -56,7 +56,7 @@
                                 <img class="icon-nav" src="{{asset('assets/images/icon-cart.svg')}}" alt=""></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link m-0" href="#">
+                            <a class="nav-link m-0"  id="drop-navigate" href="#">
                                 <img class="logo-nav" src="{{asset('assets/images/icon-nav.svg')}}" alt=""></a>
                         </li>
                     </ul>
@@ -65,3 +65,12 @@
         </div>
     </div>
 </nav>
+
+<div class="card drop-nav hide-master" id="drop-nav">
+    <ul class="">
+        <li><a href="" class="border-custom">Cadastrar produto</a></li>
+        <li><a href="" class="border-custom">Ajustes</a></li>
+        <li><a href="" class="border-custom">Perfil</a></li>
+        <li><a href="">Sair</a></li>
+    </ul>
+</div>
