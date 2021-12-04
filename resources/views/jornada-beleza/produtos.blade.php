@@ -3,7 +3,7 @@
 @section('content')
     <style type="text/css">
         .ajax-load {
-            background: #e1e1e1;
+            /*background: #e1e1e1;*/
             padding: 10px 0px;
             width: 100%;
         }

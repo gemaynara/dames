@@ -19,12 +19,11 @@ class ProdutoController extends Controller
     public function getProdutosSalao(Request $request)
     {
         $produtos = (new ProdutoService)->getProdutos();
-        $produtos->favoritos = (new ProdutoService)->getProdutosFavorito();
 
-        if ($request->ajax()) {
-            $view = view('components.lista-produtos', compact('produtos'))->render();
-            return response()->json(['html' => $view]);
-        }
+//        if ($request->ajax()) {
+//            $view = view('components.lista-produtos', compact('produtos'))->render();
+//            return response()->json(['html' => $view]);
+//        }
 
         return view('jornada-beleza.produtos', compact('produtos'));
     }
@@ -58,15 +57,19 @@ class ProdutoController extends Controller
 
     public function addProdutofavorito(Request $request)
     {
-        $produto = ProdutoFavorito::where('produto_id', $request->id)->where('user_id', Auth::user()->id)->get();
 
-        if (sizeof($produto) == 0) {
-            $favorito = new ProdutoFavorito;
-            $favorito->user_id = Auth::user()->id;
-            $favorito->produto_id = $request->id;
-            $favorito->save();
+        $produto = ProdutoFavorito::where('produto_id', $request->id)->where('user_id', auth()->user()->id)->first();
+
+        if (empty($produto)) {
+            ProdutoFavorito::query()->create([
+                'user_id' => auth()->user()->id,
+                'produto_id' => $request->id
+            ]);
         } else {
-            return response()->json('Produto já esta nos seu favoritos');
+            ProdutoFavorito::query()->where(
+                'user_id', auth()->user()->id)
+                ->where('produto_id', $request->id)
+                ->delete();
         }
 
 

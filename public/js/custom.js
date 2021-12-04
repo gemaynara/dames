@@ -59,7 +59,7 @@ $(document).ready(function () {
     })
 })
 
-$(document).ready(function () {
+
     $('.favorito-action').on('click', function (e) {
         e.preventDefault();
         var id = $(this).data('id');
@@ -78,14 +78,21 @@ $(document).ready(function () {
             success: function (response) {
                 setTimeout(() => {
                     location.reload();
-                }, 1000);
+                }, 100);
             },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log('error ')
+            error: function (httpObj, textStatus) {
+                if(httpObj.status==401){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        confirmButtonColor: '#4D22C5',
+                        text: 'Você precisa estar logado para inserir um produto à lista de favoritos',
+                        footer: '<a href="/login"><strong>Entrar na minha conta</strong></a>'
+                    })
+                }
+
             }
         });
-
-    })
 });
 
 $('#drop-navigate').on('click', function (e) {

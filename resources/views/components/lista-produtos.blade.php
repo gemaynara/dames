@@ -1,8 +1,7 @@
 @foreach($produtos as $produto)
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between scrolling-pagination">
 
-        <div class="mr-2 card-product" style="">
-
+        <div class="mr-2 card-product">
             <img
                 src="{{ is_null($produto->imagem) ? asset('images/no-photo.jpg'): asset('images/produtos/'.$produto->imagem) }}"
                 class="card-img-top" alt="">
@@ -22,19 +21,13 @@
                 <div class="d-flex justify-content-between">
                     <div class="avaliacao"></div>
                     <div class="add_list favorito-action" data-id="{{$produto->id}}"
-                         data-route="{{route('salao.add-produto-favorito', $produto->id)}}">
-                        @foreach($produtos->favoritos as $favoritos)
-                            @if( $favoritos->produto_id == $produto->id)
-                                <i class="fas fa-heart text-danger"></i>
-                            @endif
-
-                        @endforeach
-                            @if($favoritos->produto_id != $produto->id)
-                                <i class="far fa-heart"></i>
-                            @endif
+                         data-route="{{route('salao.produto-favorito')}}">
+                        @if(count($produto->favorito))
+                            <i class="fas fa-heart text-danger"></i>
+                        @else
+                            <i class="fas fa-heart bg-transparent"></i>
+                        @endif
                         + <span class="p-0 m-0">lista</span>
-
-
                     </div>
                 </div>
             </div>
@@ -42,3 +35,4 @@
     </div>
 
 @endforeach
+{{ $produtos->links() }}

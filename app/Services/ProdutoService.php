@@ -17,7 +17,17 @@ class ProdutoService
         $produtos = Produto::where('ativo', 1)
             ->select('produtos.*',
                 DB::raw('(select diretorio from produtos_imagens where produtos.id  =   produtos_imagens.produto_id  and imagem_principal = 1 order by  produtos.id desc limit 1) as imagem'))
-            ->orderBy('qnt_vendida', 'desc');
+            ->orderBy('qnt_vendida', 'desc')
+            ->when(auth()->check(), function ($query) {
+                $query->with(['favorito' => function ($hasMany) {
+                    $hasMany->where('user_id', auth()->user()->id);
+                }]);
+            })
+            ->when(auth()->guest(), function ($query) {
+                $query->with(['favorito' => function ($hasMany) {
+                    $hasMany->whereRaw('1 = 0');
+                }]);
+            });
         if ($distrubuidor) {
             $produtos->where('distribuidor_id', $distrubuidor);
         }
@@ -57,9 +67,9 @@ class ProdutoService
     public function getProdutosFavorito()
     {
         if (auth()->check()) {
-            return ProdutoFavorito::where('user_id', Auth::user()->id)->get();
+            return ProdutoFavorito::where('user_id', auth()->user()->id)->get();
         } else {
-            return ['produto_id' => 0];
+            return [];
         }
 
     }

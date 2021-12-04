@@ -26,4 +26,8 @@ class Produto extends Model
         'ativo',
     ];
 
+    public function favorito(){
+        return $this->hasMany(ProdutoFavorito::class,'produto_id');
+    }
+
 }
