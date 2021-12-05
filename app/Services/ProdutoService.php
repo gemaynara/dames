@@ -6,6 +6,7 @@ use App\Categoria;
 use App\Produto;
 use App\ProdutoFavorito;
 use App\ProdutoImagens;
+use App\Rating;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -59,6 +60,9 @@ class ProdutoService
         $produto = Produto::where('produtos.id', $id)
             ->join('categorias', 'categorias.id', 'produtos.categoria_id')
             ->select('produtos.*', 'categorias.nome as categoria')->first();
+
+        $produto->rating = $produto->averageRating;
+        $produto->review = $produto->ratings;
 
         $imagens = ProdutoImagens::where('produto_id', $id)->orderBy('imagem_principal', 'desc')->get();
         return ['produto' => $produto, 'imagens' => $imagens];

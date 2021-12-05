@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container py-5">
         <nav aria-label="breadcrumb">
             {{ Breadcrumbs::render('categoria-produto', $produto['produto']->categoria, $produto['produto']->nome) }}
@@ -72,8 +73,10 @@
                         <button type="submit" class="btn-add-cart">Adicionar ao carrinho</button>
                     </form>
                     <div class="d-flex">
-                        <p>Vendido e entregue por: Nome da loja</p>
-                        <p>Avaliação:</p>
+                        <p>Vendido e entregue por: Nome da loja </p>
+                        <p> Avaliação:</p>
+                        <span class="stars" data-rating="{{ $produto['produto']->rating }}"></span>
+
                     </div>
                 </div>
 
@@ -93,6 +96,25 @@
             </div>
         </div>
 
+        <div class="">
+            <div class="">
+                <div class="card-body">
+                    <h3 class="card-title">Comentários recentes</h3>
+                    @foreach($produto['produto']->review as $review)
+                        <p class="card-text">
+                            <span class="stars" data-rating="{{ $review->rating }}"></span> -
+                            {{$review->user->name}} - {{\Carbon\Carbon::parse($review->updated_at)->format('d/m/Y H:i')}}
+                            <br>
+                            {{$review->comment}}
+                        </p>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+
 
     </div>
+
 @endsection
+

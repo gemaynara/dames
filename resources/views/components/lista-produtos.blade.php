@@ -19,7 +19,9 @@
                 </a>
 
                 <div class="d-flex justify-content-between">
-                    <div class="avaliacao"></div>
+                    <div class="avaliacao ">
+                        <span class="stars" data-rating="{{ $produto->averageRating }}"></span>
+                    </div>
                     <div class="add_list favorito-action" data-id="{{$produto->id}}"
                          data-route="{{route('salao.produto-favorito')}}">
                         @if(count($produto->favorito))
@@ -35,4 +37,4 @@
     </div>
 
 @endforeach
-{{ $produtos->links() }}
+

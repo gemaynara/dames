@@ -7,6 +7,7 @@ use App\ProdutoFavorito;
 use App\Services\ProdutoService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use willvincent\Rateable\Rating;
 
 class ProdutoController extends Controller
 {
@@ -20,10 +21,10 @@ class ProdutoController extends Controller
     {
         $produtos = (new ProdutoService)->getProdutos();
 
-//        if ($request->ajax()) {
-//            $view = view('components.lista-produtos', compact('produtos'))->render();
-//            return response()->json(['html' => $view]);
-//        }
+        if ($request->ajax()) {
+            $view = view('components.lista-produtos', compact('produtos'))->render();
+            return response()->json(['html' => $view]);
+        }
 
         return view('jornada-beleza.produtos', compact('produtos'));
     }
@@ -32,13 +33,13 @@ class ProdutoController extends Controller
     {
         $id = $request->id;
         $produto = (new ProdutoService())->getDetalhesProduto($id);
+
         return view('jornada-beleza.detalhe-produto', ['produto' => $produto]);
     }
 
     public function getProdutosCategoria(Request $request)
     {
         $produtos = (new ProdutoService)->getProdutosCategoria($request->categoria);
-
         if ($request->ajax()) {
             $view = view('components.lista-produtos', compact('produtos'))->render();
             return response()->json(['html' => $view]);
@@ -48,11 +49,12 @@ class ProdutoController extends Controller
 
     public function avaliarProduto(Request $request)
     {
-        $rating = new Rating;
-        $rating->user_id = Auth::id();
-        $rating->rating = $request->input('star');
-        $post->ratings()->save($rating);
-        return redirect()->back();
+        $post = Produto::first();
+
+// Add a rating of 5, from the currently authenticated user
+        $post->rate(5);
+        dd($post->averageRating);
+
     }
 
     public function addProdutofavorito(Request $request)

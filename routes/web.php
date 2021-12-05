@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/pagamento', 'PagamentoController@inicioPagamento')->name('salao.pagamento');
 
         Route::post('/produto-favorito', 'ProdutoController@addProdutofavorito')->name('salao.produto-favorito');
+        Route::post('/produto-estrelas', 'ProdutoController@avaliarProduto')->name('salao.produto-estrelas');
 
 
     });

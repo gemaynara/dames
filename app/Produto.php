@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use willvincent\Rateable\Rateable;
+
 class Produto extends Model
 {
     use Rateable;
+
     public $timestamps = true;
     protected $table = 'produtos';
     protected $primaryKey = 'id';
@@ -26,8 +28,15 @@ class Produto extends Model
         'ativo',
     ];
 
-    public function favorito(){
-        return $this->hasMany(ProdutoFavorito::class,'produto_id');
+    public function favorito()
+    {
+
+        return $this->hasMany(ProdutoFavorito::class, 'produto_id');
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class, 'produto_id')->orderBy('created_at', 'desc');
     }
 
 }
