@@ -37,7 +37,7 @@ class Helper
             return false;
         }
 
-        $fileName =  $file->hashName();
+        $fileName = $file->hashName();
 
         $path = "arquivos/" . time() . "/" . $fileName;
 
@@ -51,6 +51,18 @@ class Helper
         }
         return false;
 
+    }
+
+    public static function generateCartCode($prefix = 'C')
+    {
+        $seed = str_split('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+        shuffle($seed);
+        $string = '';
+        foreach (array_rand($seed, 4) as $s) {
+            $string .= $seed[$s];
+        }
+
+        return strtoupper($prefix . $string);
     }
 
 }

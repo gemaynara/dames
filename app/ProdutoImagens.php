@@ -18,4 +18,9 @@ class ProdutoImagens extends Model
         'tamanho',
         'ativo',
     ];
+
+    public function produto()
+    {
+        return $this->belongsTo(Produto::class);
+    }
 }

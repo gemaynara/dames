@@ -10,12 +10,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex justify-content-between w-100">
-                <form class="form-inline my-2 my-lg-0 ml-5">
-                    <div class="form-search-custom d-flex justify-content-between">
-                        <input class="form-custom mr-sm-2" type="search" placeholder="Busque um produto, loja ou marca">
-                        <span class="icon-search"><i class="fas fa-search"></i></span>
-                    </div>
-                </form>
+                @include('layouts.nav.busca')
                 <div class="d-flex">
 
                     <ul class="navbar-nav mr-4 d-flex align-items-center ">
@@ -44,11 +39,10 @@
 </nav>
 
 
-<div class="card drop-nav hide-master" id="drop-nav">
-    <ul class="">
-        <li><a href="" class="border-custom">Cadastrar produto</a></li>
-        <li><a href="" class="border-custom">Ajustes</a></li>
-        <li><a href="" class="border-custom">Perfil</a></li>
-        <li><a href="">Sair</a></li>
-    </ul>
-</div>
+{{--<div class="card drop-nav hide-master" id="drop-nav">--}}
+{{--    <ul class="">--}}
+{{--        <li><a href="" class="border-custom">Ajustes</a></li>--}}
+{{--        <li><a href="" class="border-custom">Perfil</a></li>--}}
+{{--        <li><a href="">Sair</a></li>--}}
+{{--    </ul>--}}
+{{--</div>--}}

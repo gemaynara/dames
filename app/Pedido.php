@@ -14,6 +14,8 @@ class Pedido extends Model
         'user_id',
         'endereco_id',
         'cupom_id',
+        'codigo_carrinho',
+        'codigo_pedido',
         'data_compra',
         'subtotal',
         'desconto',

@@ -35,6 +35,16 @@ class ProdutoService
         return $produtos->paginate(9);
     }
 
+    public function searchProduto($produto)
+    {
+        return Produto::where('ativo', 1)
+            ->select('produtos.nome')
+//                DB::raw('(select diretorio from produtos_imagens where produtos.id  =   produtos_imagens.produto_id  and imagem_principal = 1 order by  produtos.id desc limit 1) as imagem'))
+            ->where("produtos.nome", "LIKE", "%$produto%")
+            ->get();
+
+    }
+
     public function getProdutosCategoria($categoria)
     {
         $categoria = Categoria::where('nome', $categoria)->first();
@@ -57,6 +67,7 @@ class ProdutoService
 
     public function getDetalhesProduto($id)
     {
+
         $produto = Produto::where('produtos.id', $id)
             ->join('categorias', 'categorias.id', 'produtos.categoria_id')
             ->select('produtos.*', 'categorias.nome as categoria')->first();
@@ -64,8 +75,9 @@ class ProdutoService
         $produto->rating = $produto->averageRating;
         $produto->review = $produto->ratings;
 
-        $imagens = ProdutoImagens::where('produto_id', $id)->orderBy('imagem_principal', 'desc')->get();
-        return ['produto' => $produto, 'imagens' => $imagens];
+        $produto->images = $produto->imagens;
+
+        return $produto;
     }
 
     public function getProdutosFavorito()

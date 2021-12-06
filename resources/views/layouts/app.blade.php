@@ -29,13 +29,11 @@
 </head>
 <body>
 <div id="app">
-    @if(auth()->guest())
-        @include('layouts.nav.nav')
-    @elseif(auth()->user()->perfil == "D")
-        @include('layouts.nav.nav-distribuidor')
-    @elseif(auth()->user()->perfil == "S")
-        @include('layouts.nav.nav-salao')
-    @endif
+    @guest
+        @include('layouts.nav.nav-guest')
+    @else
+        @include('layouts.nav.nav-logado')
+    @endguest
     <main class="" style="background: white">
 
         @yield('content')

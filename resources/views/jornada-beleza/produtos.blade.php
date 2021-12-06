@@ -19,7 +19,6 @@
                     {{ Breadcrumbs::render('produtos-salao') }}
                 </nav>
                 <div class="body-product mt-3">
-
                     <section class="mt-3 d-flex flex-wrap products-list">
                         @include('components.lista-produtos')
                     </section>

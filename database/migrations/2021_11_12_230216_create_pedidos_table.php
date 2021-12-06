@@ -23,6 +23,8 @@ class CreatePedidosTable extends Migration
             $table->unsignedBigInteger('cupom_id')->nullable();
             $table->foreign('cupom_id')->references('id')->on('cupons');
 
+            $table->string('codigo_carrinho', 50)->nullable();
+            $table->string('codigo_pedido', 50)->nullable();
             $table->dateTime('data_compra')->nullable();
             $table->decimal('subtotal', 11, 2)->default(0.00);
             $table->decimal('desconto', 11, 2)->default(0.00);

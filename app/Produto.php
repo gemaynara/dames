@@ -39,4 +39,9 @@ class Produto extends Model
         return $this->hasMany(Rating::class, 'produto_id')->orderBy('created_at', 'desc');
     }
 
+    public function imagens()
+    {
+        return $this->hasMany(ProdutoImagens::class, 'produto_id')->orderBy('imagem_principal', 'desc');
+    }
+
 }

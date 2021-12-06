@@ -10,7 +10,7 @@
             @foreach($maisVendidos as $produto)
                 <a href="{{route('salao.produtos.detalhes',[ 'id'=>$produto->id,'slug'=> $produto->slug])}}">
                     <div class="card-produto">
-                        <div class="header-card-produto" style="background: url('{{asset('/images/produtos/'. $produto->imagem)}}');">
+                        <div class="header-card-produto" style="background: url('{{ is_null($produto->imagem) ? asset('images/no-photo.jpg'): asset('images/produtos/'.$produto->imagem)}}');">
                         </div>
                         <div class="footer-card-produto">
                             <h4 class="name-product">{{$produto->nome}}</h4>

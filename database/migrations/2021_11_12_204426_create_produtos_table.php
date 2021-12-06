@@ -21,6 +21,7 @@ class CreateProdutosTable extends Migration
             $table->foreign('marca_id')->references('id')->on('marcas');
             $table->integer('distribuidor_id')->nullable();
             $table->string('nome', 50);
+            $table->string('codigo', 20)->nullable();
             $table->string('descricao', 300)->nullable();
             $table->string('detalhes', 800)->nullable();
             $table->decimal('valor', 11,2);

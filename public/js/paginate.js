@@ -17,12 +17,13 @@ function loadMoreData(page) {
             }
         })
         .done(function (data) {
-            if (data.html === "") {
-                $('.ajax-load').html("Mostrando todos os resultados");
-                return;
-            }
-            $('.ajax-load').hide();
-            $(".products-list").append(data.html);
+            console.log(data)
+            // if (data.html === "") {
+            //     $('.ajax-load').html("Mostrando todos os resultados");
+            //     return;
+            // }
+            // $('.ajax-load').hide();
+            // $(".products-list").append(data.html);
         })
         .fail(function (jqXHR, ajaxOptions, thrownError) {
             alert('server not responding...');
