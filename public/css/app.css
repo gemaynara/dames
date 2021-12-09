@@ -221,7 +221,6 @@
 }
 
 .header-salao {
-  background: url(/images/salao.png?2daa05c698924cabf38f87b0c7a57a8c) no-repeat;
   background-size: cover;
   flex: 1;
   display: flex;
@@ -238,7 +237,6 @@
 }
 
 .header-distribuidor {
-  background: url(/images/destribuidora.png?25a75226add0cfcd15b93dda358d0b09) no-repeat;
   background-size: cover;
   flex: 1;
   display: flex;
