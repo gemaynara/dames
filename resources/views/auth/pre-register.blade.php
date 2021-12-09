@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="body-pre-cadastro">
+    <div class="body-pre-cadastro" style=" background: url('{{asset('assets/images/banner-pre-cadastro.png')}}') ">
         <div class="d-flex flex-column">
             <h1 class="text-light text-center py-3">Escolha o seu perfil</h1>
             <div class="container content-pre-register d-flex align-items-center">
