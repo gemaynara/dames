@@ -12,7 +12,7 @@
                                     <a href="{{route('register', ['tipo'=> "S"])}}">
                                         <div class="card-tipos d-flex flex-column justify-content-between"
                                              style="height: 100%;">
-                                            <div class="header-salao" style="{{asset('assets/images/salao.png')}}">
+                                            <div class="header-salao" style="background: url("{{asset('assets/images/salao.png')}}")">
 
                                             </div>
                                             <div class="footer-salao">
@@ -28,7 +28,7 @@
                                     <div class="">
                                         <div class="card-tipos d-flex flex-column justify-content-between"
                                              style="height: 100%;">
-                                            <div class="header-distribuidor" style="{{asset('assets/images/destribuidora.png')}}">
+                                            <div class="header-distribuidor" style="background: url("{{asset('assets/images/destribuidora.png')}}")">
                                             </div>
                                             <div class="footer-distribuidor">
                                                 <h2>Distribuidora</h2>
