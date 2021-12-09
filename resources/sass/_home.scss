@@ -178,7 +178,8 @@
 }
 
 .banner-landerpage {
-    background: url("./assets/images/banner-home.svg") no-repeat;
+    //background: url("public/assets/images/banner-home.svg") no-repeat;
+    background-color: #000000;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -206,7 +207,7 @@
 .foto-banner {
     position: absolute;
     right: 0px;
-    height: 421px;
+    height: 450px;
 }
 
 .content-banner {
