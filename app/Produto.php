@@ -30,7 +30,6 @@ class Produto extends Model
 
     public function favorito()
     {
-
         return $this->hasMany(ProdutoFavorito::class, 'produto_id');
     }
 

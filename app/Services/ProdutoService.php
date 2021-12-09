@@ -74,19 +74,10 @@ class ProdutoService
 
         $produto->rating = $produto->averageRating;
         $produto->review = $produto->ratings;
-
         $produto->images = $produto->imagens;
 
         return $produto;
     }
 
-    public function getProdutosFavorito()
-    {
-        if (auth()->check()) {
-            return ProdutoFavorito::where('user_id', auth()->user()->id)->get();
-        } else {
-            return [];
-        }
 
-    }
 }
