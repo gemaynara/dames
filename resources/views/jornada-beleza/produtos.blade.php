@@ -22,11 +22,11 @@
                     <section class="mt-3 d-flex flex-wrap products-list">
                         @include('components.lista-produtos')
                     </section>
-                    <div class="ajax-load text-center" style="display:none">
-                        <img src="{{asset('images/loading.gif')}}" width="100px !important">
-                    </div>
+{{--                    <div class="ajax-load text-center" style="display:none">--}}
+{{--                        <img src="{{asset('images/loading.gif')}}" width="100px !important">--}}
+{{--                    </div>--}}
 
-                    {{--                    {{$produtos->render()}}--}}
+                    {{$produtos->render()}}
                     {{--                    <nav aria-label="Page navigation example" class="mt-5">--}}
                     {{--                        <ul class="pagination">--}}
                     {{--                            <li class="page-item">--}}
