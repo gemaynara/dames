@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Services\CategoriaService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +26,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $categorias = Categoria::getCategorias(10);
+        $categorias = (new CategoriaService())->getCategorias(10);
         if (auth()->user()->perfil == "S"){
             return view('jornada-beleza.home-beleza', compact('categorias'));
         }elseif (auth()->user()->perfil == "D"){
@@ -35,7 +36,8 @@ class HomeController extends Controller
     }
 
     public function welcome(){
-        $categorias = Categoria::getCategorias(10);
+
+        $categorias = (new CategoriaService())->getCategorias(10);
         return view('welcome', compact('categorias'));
     }
 

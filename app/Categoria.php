@@ -17,9 +17,5 @@ class Categoria extends Model
         'ativo'
     ];
 
-    public static function getCategorias($limit = null)
-    {
-        return Categoria::where('ativo', 1)->orderBy("nome", 'asc')
-            ->take($limit)->get();
-    }
+
 }

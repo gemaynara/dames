@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Services\CategoriaService;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
 
     public function listaCategorias(){
-        $categorias = Categoria::getCategorias();
-        return view('inicio-jornada.categorias', compact('categorias'));
+
+        $categorias = (new CategoriaService())->getCategorias();
+        return view('inicio-jornada.lista-categorias', compact('categorias'));
     }
 
 

@@ -1,3 +1,4 @@
+<?php $marcas = (new \App\Services\MarcaService())->getMarcas(10); ?>
 @extends('layouts.app')
 
 @section('content')

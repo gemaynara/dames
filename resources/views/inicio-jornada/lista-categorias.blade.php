@@ -16,7 +16,7 @@
                     @else
                         <img src="{{asset('assets/images/Vector.png')}}" alt="{{$categoria->nome}}">
                     @endif
-                    <a class="text-category">{{$categoria->nome}}</a>
+                    <a class="text-category"  href="{{route('salao.produtos.categoria', $categoria->nome)}}">{{$categoria->nome}}</a>
                 </div>
             @endforeach
 

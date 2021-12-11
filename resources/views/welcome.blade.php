@@ -58,7 +58,7 @@
 
                 <div class="header-best-marcas d-flex ml-3 mb-2">
                     <h4 class="font-weight-bold mr-2">As melhores marcas</h4>
-                    <a href="" class="pt-2 text-underlineo text-color-primary pb-0 m-0">Visualizar todos</a>
+                    <a href="{{route('salao.marcas')}}" class="pt-2 text-underlineo text-color-primary pb-0 m-0">Visualizar todos</a>
                 </div>
 
                 <div class="slider"></div>

@@ -75,8 +75,8 @@
                 <div class="col-md-6 content-banner-landerpage-text">
                     <h1 class="text-light mb-5">Tenha as melhores marcas com o melhor preço!</h1>
                     <div class="d-flex align-items-center">
-                        <a href="" class="btn-outline mr-4">Quero me cadastrar</a>
-                        <a href="" class="text-light">Já tenho minha conta</a>
+                        <a href="{{route('pre-register')}}" class="btn-outline mr-4">Quero me cadastrar</a>
+                        <a href="{{route('login')}}" class="text-light">Já tenho minha conta</a>
                     </div>
                 </div>
                 <img src="{{asset('assets/images/banner-aux.png')}}" class="foto-banner" alt="">

@@ -6,36 +6,15 @@
             <h2 class="py-4 text-center">Marcas</h2>
             <div class="container py-4">
                 <div class="d-flex flex-wrap">
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
-                    <a class="card-marca">
-                        <img src="{{asset('assets/images/itallian.png')}}" alt="">
-                    </a>
+                    @foreach($marcas as $marca)
+                        <a class="card-marca">
+                            @if(is_null($marca->imagem))
+                                <img src="{{asset('images/no-photo.jpg')}}" alt="" width="100px">
+                            @else
+                                <img src="{{asset('images/marcas/'. $marca->imagem)}}" alt="" width="150px">
+                            @endif
+                        </a>
+                    @endforeach
 
 
                 </div>

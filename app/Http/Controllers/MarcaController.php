@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Marca;
+use App\Services\MarcaService;
 use Illuminate\Http\Request;
 
 class MarcaController extends Controller
 {
 
-
-    public function listaMarcas(){
-        $marcas = Marca::where('ativo', 1)->orderBy('nome', 'asc')->get();
-        return view('components.marcas', compact('marcas'));
+    public function getMarcas(){
+        $marcas = (new MarcaService())->getMarcas();
+        return view('inicio-jornada.marcas', compact('marcas'));
     }
     /**
      * Display a listing of the resource.

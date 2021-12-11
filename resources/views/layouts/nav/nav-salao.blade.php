@@ -7,7 +7,7 @@
 
     <ul class="navbar-nav mr-4 d-flex align-items-center ">
         <li class="nav-item">
-            <a class="nav-link nav-login" href="{{route('jornada.marcas')}}">Marcas</a>
+            <a class="nav-link nav-login" href="{{route('salao.marcas')}}">Marcas</a>
         </li>
     </ul>
     <ul class="navbar-nav mr-4 d-flex align-items-center ">
