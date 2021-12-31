@@ -3,6 +3,11 @@
     height: 500px;
 }
 
+.link-mais {
+    padding: 3px 0px 0px 0px !important;
+    text-decoration: underline;
+}
+
 .btn-primary-banner {
     //width: 133px;
     height: 31px;
@@ -190,6 +195,16 @@
 .content-banner-landerpage {
     align-items: center;
     display: flex;
+}
+.btn-white-hover:hover{
+    color: white;
+    background: #4D22C5;
+    transition: 100ms ease-in;
+}
+
+.center-form-nav{
+    position: relative;
+    left: 56px;
 }
 
 .btn-outline {

@@ -6,7 +6,7 @@
             <div class="d-flex align-items-center justify-content-between">
                 <div class="left-login col-md-6 col-lg-4">
                     <h1>O lugar perfeito para seu salão beleza!</h1>
-                    <p>Não tem cadastro ainda?<a href="{{route('pre-register')}}"> Clique aqui e cadastre-se</a></p>
+                    <p class="text-color-primary">Não tem cadastro ainda?<a class="text-color-primary text-underlineo" href="{{route('pre-register')}}"> Clique aqui e cadastre-se</a></p>
                 </div>
                 <div class="right">
                         <div class="card-login">

@@ -58,7 +58,8 @@
 
                 <div class="header-best-marcas d-flex ml-3 mb-2">
                     <h4 class="font-weight-bold mr-2">As melhores marcas</h4>
-                    <a href="{{route('salao.marcas')}}" class="pt-2 text-underlineo text-color-primary pb-0 m-0">Visualizar todos</a>
+                    <a href="{{route('salao.marcas')}}" class="text-color-primary pb-0 m-0 link-mais">Visualizar
+                        todos</a>
                 </div>
 
                 <div class="slider"></div>
@@ -74,7 +75,7 @@
                 <div class="col-md-6 content-banner-landerpage-text">
                     <h1 class="text-light mb-5">Tenha as melhores marcas com o melhor preço!</h1>
                     <div class="d-flex align-items-center">
-                        <a href="" class="btn-outline mr-4">Quero me cadastrar</a>
+                        <a href="" class="btn-outline btn-white-hover mr-4">Quero me cadastrar</a>
                         <a href="" class="text-light">Já tenho minha conta</a>
                     </div>
                 </div>
