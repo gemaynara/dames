@@ -19,9 +19,11 @@ ul {
         }
     }
 }
-.bg-cinza{
+
+.bg-cinza {
     background: rgba(195, 195, 195, 0.23);
 }
+
 .max-photo {
     img {
         width: 100%;
@@ -212,4 +214,35 @@ ul {
 
 .btn-add-cart:hover {
     color: #4D22C5;
+}
+
+
+#image_preview {
+    display: flex;
+
+    img {
+        width: 194.88px;
+        height: 198.05px;
+        border: 1px solid;
+        border-radius: 4px;
+        margin: 10px;
+    }
+}
+
+#upload_file {
+    display: none;
+}
+
+.add-img {
+    width: 194.88px;
+    height: 198.05px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-family: Roboto;
+    font-size: 12px;
+    text-align: center;
+    color: #4D22C5;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }

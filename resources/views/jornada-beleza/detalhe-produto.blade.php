@@ -59,12 +59,6 @@
                         @endif
                     </h3>
                 @endif
-
-
-
-                {{--                <a href="" class="btn btn-puper"><i class="fas fa-shopping-cart"></i> Comprar</a>--}}
-                {{--                <hr>--}}
-
                 <div class="options-card">
                     <label for="">
                         {{$produto->estoque > 0? 'Estoque disponível': 'Produto Esgotado'}}
@@ -84,8 +78,8 @@
                         <button type="submit" class="btn-add-cart">Adicionar ao carrinho</button>
                     </form>
                     <div class="d-flex">
-                        <p>Vendido e entregue por: Nome da loja </p>
-                        <p> Avaliação:</p>
+                        <p class="mr-2">Vendido e entregue por: <strong> Nome da loja </strong></p>
+                        <p>Avaliação:</p>
                         <span class="stars" data-rating="{{ $produto->rating }}"></span>
 
                     </div>
@@ -111,6 +105,12 @@
             <div class="">
                 <div class="card-body">
                     <h3 class="card-title">Comentários recentes</h3>
+
+                    <form action="" class="mt-2 mb-4 d-flex">
+                        <input type="text" placeholder="Escreva sua pergunta" class="form-control col mr-2">
+                        <button type="submit" class="btn btn-primary">Enviar pergunta</button>
+                    </form>
+
                     @foreach($produto->review as $review)
                         <p class="card-text">
                             <span class="stars" data-rating="{{ $review->rating }}"></span> -
