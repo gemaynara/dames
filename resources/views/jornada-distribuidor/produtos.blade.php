@@ -238,7 +238,7 @@
 
                 var total_file = document.getElementById("upload_file").files.length;
                 for (var i = 0; i < total_file; i++) {
-                    $('#image_preview').append("<img src='" + URL.createObjectURL(event.target.files[i]) + "'><br>");
+                    $('#image_preview').append("<img src='" + URL.createObjectURL(event.target.files[i]) + "'>");
                 }
             }
         </script>
