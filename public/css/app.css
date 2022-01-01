@@ -967,9 +967,10 @@ ul {
 #image_preview img {
   width: 194.88px;
   height: 198.05px;
+  color: #4D22C5;
   border: 1px solid;
   border-radius: 4px;
-  margin: 10px;
+  margin: 0px 10px;
 }
 
 #upload_file {
@@ -985,6 +986,7 @@ ul {
   font-size: 12px;
   text-align: center;
   color: #4D22C5;
+  margin: 0 !important;
   justify-content: center;
   display: flex;
   align-items: center;
