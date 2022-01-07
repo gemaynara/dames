@@ -126,3 +126,23 @@ $(".stars").each(function () {
 });
 
 
+$('input[name="marcas"]').on('change', function (e) {
+    var marcas = [];
+    $('input:checkbox[name=marcas]').each(function () {
+        if ($(this).is(':checked'))
+            marcas.push($(this).val());
+    });
+    var url = '/jornada/produtos/busca/' + marcas;
+    $.ajax({
+        type: 'GET',
+        url: url,
+        success: function (data) {
+            window.location.href = url
+        },
+        error: function () {
+            console.log(data);
+        }
+    });
+})
+
+

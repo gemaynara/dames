@@ -1,13 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <style type="text/css">
-        .ajax-load {
-            /*background: #e1e1e1;*/
-            padding: 10px 0px;
-            width: 100%;
-        }
-    </style>
+
     <div class="container py-5">
         @include('components.items-list')
         <div class="d-flex mt-5 justify-content-between" style="width: 100%;flex: 1">

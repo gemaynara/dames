@@ -4,6 +4,11 @@ $(".cnpj").mask("99.999.999/0001-99");
 $(".numero").mask("99999");
 $(".telefone").mask("(99) #999-9999");
 $(".celular").mask("(99) 99999-9999");
+$(".tamanho").mask("9.99", {reverse: true});
+$(".peso").mask("999.999", {reverse: true});
+$(".codigo").mask("999999999999999");
+$(".estoque").mask("99999999");
+$(".valor").mask("99999.99", {reverse: true});
 
 $("#cep-comercial").on('blur', function (e){
     e.preventDefault();

@@ -19,11 +19,13 @@ Route::group(['prefix' => 'jornada'], function () {
     Route::get('/carrinho', 'PedidoController@verCarrinho')->name('jornada.carrinho');
 
     Route::get('/produtos', 'ProdutoController@getProdutosSalao')->name('salao.produtos');
-    Route::get('/produtos/{categoria}', 'ProdutoController@getProdutosCategoria')->name('salao.produtos.categoria');
+    Route::get('/produtos/categoria/{categoria}', 'ProdutoController@getProdutosCategoria')->name('salao.produtos.categoria');
     Route::get('/produto/{id}/{slug}', 'ProdutoController@getDetalhesProduto')->name('salao.produtos.detalhes');
     Route::get('/busca-produto', 'ProdutoController@searchProduto')->name('salao.produtos.busca');
 
     Route::get('/marcas', 'MarcaController@getMarcas')->name('salao.marcas');
+    Route::get('/produtos/marca/{marca}', 'ProdutoController@getProdutosMarca')->name('salao.produtos.marca');
+    Route::get('/produtos/busca/{marca}', 'ProdutoController@filtroProdutos')->name('salao.produtos.filtro');
 });
 
 
@@ -67,11 +69,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'distribuidor'], function () {
 
         Route::get('/produtos', 'ProdutoController@getProdutosDistribuidor')->name('distribuidor.produtos');
+        Route::post('/add-produto', 'ProdutoController@store')->name('distribuidor.add-produto');
 
-
-        Route::get('/jornada_distribuidor/detail', function () {
-            return view('jornada-distribuidor/detail');
-        })->name('detail');
 
 
         Route::get('/jornada_distribuidor/vendas', function () {
@@ -82,6 +81,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/jornada_distribuidor/categories', function () {
             return view('jornada_distribuidor.categories');
         })->name('categories');
+
+
+        Route::group(['prefix'=>'api'], function (){
+            Route::get('/borzo', 'BorzoController@index');
+        });
 
 
     });

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Categoria;
+use App\Marca;
 use App\Produto;
 use App\ProdutoFavorito;
 use App\ProdutoImagens;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class ProdutoService
 {
 
-    public function getProdutos($distrubuidor = null)
+    public function getProdutos()
     {
         $produtos = Produto::where('ativo', 1)
             ->select('produtos.*',
@@ -29,8 +30,8 @@ class ProdutoService
                     $hasMany->whereRaw('1 = 0');
                 }]);
             });
-        if ($distrubuidor) {
-            $produtos->where('distribuidor_id', $distrubuidor);
+        if (auth()->user()->perfil == 'D') {
+            $produtos->where('distribuidor_id', auth()->user()->id);
         }
         return $produtos->paginate(9);
     }
@@ -54,6 +55,15 @@ class ProdutoService
             ->paginate(9);
     }
 
+    public function getProdutosMarca($marca)
+    {
+        $marca = Marca::where('nome', $marca)->first();
+        return Produto::where('produtos.ativo', 1)
+            ->orderBy('qnt_vendida', 'desc')
+            ->where('marca_id', $marca->id)
+            ->paginate(9);
+    }
+
     public function maisVendidos()
     {
         return Produto::where('produtos.ativo', 1)
@@ -68,9 +78,9 @@ class ProdutoService
     public function getDetalhesProduto($id)
     {
 
-        $produto = Produto::where('produtos.id', $id)
-            ->join('categorias', 'categorias.id', 'produtos.categoria_id')
-            ->select('produtos.*', 'categorias.nome as categoria')->first();
+        $produto = Produto::with('categoria', 'marca', 'distribuidor')
+            ->where('produtos.id', $id)
+            ->first();
 
         $produto->rating = $produto->averageRating;
         $produto->review = $produto->ratings;

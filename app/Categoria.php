@@ -17,5 +17,4 @@ class Categoria extends Model
         'ativo'
     ];
 
-
 }

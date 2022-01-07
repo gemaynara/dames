@@ -7,9 +7,9 @@
             <div class="container py-4">
                 <div class="d-flex flex-wrap">
                     @foreach($marcas as $marca)
-                        <a class="card-marca">
+                        <a class="card-marca" href="{{route('salao.produtos.marca', $marca->nome)}}">
                             @if(is_null($marca->imagem))
-                                <img src="{{asset('images/no-photo.jpg')}}" alt="" width="100px">
+                                <img src="{{asset('images/no-photo.jpg')}}" alt="" width="100px" >
                             @else
                                 <img src="{{asset('images/marcas/'. $marca->imagem)}}" alt="" width="150px">
                             @endif

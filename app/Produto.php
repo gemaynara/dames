@@ -22,6 +22,10 @@ class Produto extends Model
         'detalhes',
         'valor',
         'estoque',
+        'peso',
+        'altura',
+        'largura',
+        'comprimento',
         'valor_desconto',
         'qnt_vendida',
         'slug',
@@ -41,6 +45,21 @@ class Produto extends Model
     public function imagens()
     {
         return $this->hasMany(ProdutoImagens::class, 'produto_id')->orderBy('imagem_principal', 'desc');
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
+
+    public function marca()
+    {
+        return $this->belongsTo(Marca::class, 'marca_id');
+    }
+
+    public function distribuidor()
+    {
+        return $this->belongsTo(User::class, 'distribuidor_id');
     }
 
 }

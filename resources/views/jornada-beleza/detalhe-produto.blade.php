@@ -4,7 +4,7 @@
 
     <div class="container py-5">
         <nav aria-label="breadcrumb">
-            {{ Breadcrumbs::render('categoria-produto', $produto->categoria, $produto->nome) }}
+            {{ Breadcrumbs::render('categoria-produto', $produto->categoria->nome, $produto->nome) }}
         </nav>
 
         <div class="d-flex">
@@ -54,7 +54,7 @@
 
                 @else
                     <h3> R$ @money($produto->valor)
-                        @if(!is_null($produto->valor_desconto))
+                        @if(($produto->valor_desconto > 0))
                             <sub><span>R$ @money($produto->valor_desconto)</span></sub>
                         @endif
                     </h3>
@@ -78,7 +78,7 @@
                         <button type="submit" class="btn-add-cart">Adicionar ao carrinho</button>
                     </form>
                     <div class="d-flex">
-                        <p class="mr-2">Vendido e entregue por: <strong> Nome da loja </strong></p>
+                        <p class="mr-2">Vendido e entregue por: <strong> {{$produto->distribuidor->name}} </strong></p>
                         <p>Avaliação:</p>
                         <span class="stars" data-rating="{{ $produto->rating }}"></span>
 

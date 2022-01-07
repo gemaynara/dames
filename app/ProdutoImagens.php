@@ -12,10 +12,8 @@ class ProdutoImagens extends Model
 
     protected $fillable = [
         'produto_id',
-        'nome_arquivo',
         'diretorio',
-        'formato',
-        'tamanho',
+        'imagem_principal',
         'ativo',
     ];
 

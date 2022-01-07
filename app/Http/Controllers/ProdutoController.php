@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
+use App\Http\Requests\ProdutoRequest;
 use App\Produto;
 use App\ProdutoFavorito;
+use App\ProdutoImagens;
 use App\Services\ProdutoService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use willvincent\Rateable\Rating;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
+
 
 class ProdutoController extends Controller
 {
     public function getProdutosDistribuidor()
     {
-        $produtos = (new ProdutoService)->getProdutos(auth()->user()->id);
-        return view('jornada-distribuidor.produtos', compact($produtos));
+        $produtos = (new ProdutoService)->getProdutos();
+        return view('jornada-distribuidor.produtos', compact('produtos'));
     }
 
     public function getProdutosSalao(Request $request)
@@ -45,6 +50,27 @@ class ProdutoController extends Controller
             return response()->json(['html' => $view]);
         }
         return view('jornada-beleza.produtos', compact('produtos'));
+
+    }
+
+    public function getProdutosMarca(Request $request)
+    {
+        $produtos = (new ProdutoService)->getProdutosMarca($request->marca);
+        if ($request->ajax()) {
+            $view = view('components.lista-produtos', compact('produtos'));
+            return response()->json(['html' => $view]);
+        }
+        return view('jornada-beleza.produtos', compact('produtos'));
+    }
+
+    public function filtroProdutos(Request $request)
+    {
+        $marcas = $request->marca;
+        $produtos = Produto::whereIn('marca_id', [$marcas])->paginate(9);
+
+        return view('jornada-beleza.produtos', compact('produtos'));
+
+
     }
 
     public function avaliarProduto(Request $request)
@@ -103,11 +129,46 @@ class ProdutoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(ProdutoRequest $request)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $produto = new Produto();
+            $produto->distribuidor_id = auth()->user()->id;
+            $produto->categoria_id = $request->categoria_id;
+            $produto->marca_id = $request->marca_id;
+            $produto->codigo = $request->codigo;
+            $produto->nome = $request->nome;
+            $produto->descricao = $request->descricao;
+            $produto->detalhes = $request->detalhes;
+            $produto->valor = $request->valor;
+            $produto->estoque = $request->estoque;
+            $produto->peso = $request->peso;
+            $produto->altura = $request->altura;
+            $produto->largura = $request->largura;
+            $produto->comprimento = $request->comprimento;
+            $produto->slug = Str::slug($request->nome);
+            $produto->save();
+
+            if ($request->hasFile('imagens')) {
+                foreach ($request->imagens as $key => $imagem) {
+                    $img = new ProdutoImagens();
+                    $img->produto_id = $produto->id;
+                    $img->imagem_principal = $key == 0 ? 1 : 0;
+                    $img->diretorio = Helper::uploadImage($imagem, 'produtos');
+                    $img->save();
+                }
+            }
+            DB::commit();
+            return redirect()->back()->with('success', 'Produto cadastrado com sucesso');
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error("Ocorreu um erro ao registrar o produto: " . $e->getMessage());
+            return redirect()->back()->with('error', 'Ocorreu um erro ao registrar o produto');
+        }
     }
 
     /**

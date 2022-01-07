@@ -30,9 +30,9 @@ class CreateProdutosTable extends Migration
             $table->integer('qnt_vendida')->default(0);
             $table->string('slug',500)->nullable();
             $table->decimal('peso',7,3)->nullable();
-            $table->decimal('altura',7,3)->nullable();
-            $table->decimal('largura',7,3)->nullable();
-            $table->decimal('comprimento',7,3)->nullable();
+            $table->decimal('altura',7,2)->nullable();
+            $table->decimal('largura',7,2)->nullable();
+            $table->decimal('comprimento',7,2)->nullable();
             $table->tinyInteger('ativo')->default(1);
             $table->timestamps();
         });

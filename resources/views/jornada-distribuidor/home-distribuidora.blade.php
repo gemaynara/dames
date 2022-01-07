@@ -60,7 +60,7 @@
         <div class="container">
             <div class="header-best-marcas d-flex">
                 <h4 class="font-weight-bold mr-2">As melhores marcas</h4>
-                <a href="{{route('salao.marcas')}}" class="p-0 m-0">Visualizar todas</a>
+                <a href="{{route('salao.marcas')}}" class="p-0 m-0">Ver tudo</a>
             </div>
 
             <div class="slider"></div>

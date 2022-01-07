@@ -13,6 +13,7 @@ class MarcaController extends Controller
         $marcas = (new MarcaService())->getMarcas();
         return view('inicio-jornada.marcas', compact('marcas'));
     }
+
     /**
      * Display a listing of the resource.
      *

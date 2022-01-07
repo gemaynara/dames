@@ -9,8 +9,8 @@
     <section class="my-3">
         <div class="container">
             <div class="header-best-marcas d-flex">
-                <h4 class="font-weight-bold mr-2">As melhores marcas</h4>
-                <a href="{{route('salao.marcas')}}" class="link-mais">Visualizar todas</a>
+                <h4 class="font-weight-bold mr-2">Marcas mais buscadas</h4>
+                <a href="{{route('salao.marcas')}}" class="link-mais">Ver tudo</a>
             </div>
 
             <div class="slider"></div>
